@@ -1,0 +1,29 @@
+body,html{
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  height: 30vw;
+  width: 50vw;
+  background: white;
+  overflow: hidden;
+}
+.container ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 1920px;
+}
+.container ul li{
+  width: 50vw;
+  text-align: center;
+  float: left;
+}
+img{
+  width: 100%;
+  height: 30vw;
+}
+

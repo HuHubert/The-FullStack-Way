@@ -1,0 +1,18 @@
+
+使用 dat.gui 套件，自由調整 border-radius:
+https://codepen.io/jh3y/pen/XWmvwYg?fbclid=IwAR19Ay4iitTqr1V0ufS8iihdyGEXuQjwa-nfI44VTRKmf9CJqC3H6FQO2tQ
+
+用 GSAP 做到翻書效果：
+https://codepen.io/jh3y/pen/ExPVzBY?fbclid=IwAR0Hiii4PmzAKSFdl678tdRdu3eaMAOWbV5-7NptSlt0b5vW0KNRn06qEuY
+
+用 GSAP 做到啃蘋果效果：
+https://codepen.io/jh3y/pen/PoZGGMx?fbclid=IwAR27WayUqFKLBM4jyjS17HHoTQvCN_EYBSEjItM43yI6i0e8_x9SH21fGfo
+
+CSS Animate 使用關鍵影格來製作動畫效果
+http://cssanimate.com/
+
+直接套用 animate.css 讓你的物件輕鬆動起來
+https://animate.style/
+
+氣泡對話框
+https://code.ciaoca.com/style/bubble/

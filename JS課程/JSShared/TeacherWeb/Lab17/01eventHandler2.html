@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>01eventHandler2.html</title>
+    <script>
+        function f1(e) {  //e parameter
+            alert("method 1"+e.type);
+            console.log(e)
+        }
+
+        function f2(evt) {
+            alert("method 2");
+            console.log(evt.button)
+        }
+
+        function f3() {
+            alert("method 3");
+        }  
+        document.addEventListener("DOMContentLoaded",function(){
+            document.querySelector("#m2").onclick=f2;   //() calling  立即執行
+            // document.querySelector("#m2").onclick=function(abc) {
+            //     alert("method 2x");
+            //     console.log(abc);
+            // }
+            document.querySelector("#m3").addEventListener("click",f3);
+            document.querySelector("#m3").addEventListener("click",function () {
+                alert("method 3x");
+            });
+
+        }) 
+    </script>
+</head>
+<body>
+    <!-- 標籤內事件處理器 -->
+    <h1 onclick="f1(event);">method 1</h1>
+    
+    <!-- JavaScript屬性事件處理器 -->
+    <h1 id="m2">method 2</h1>
+    
+    <!-- W3C DOM 處理器序 -->
+    <h1 id="m3">method 3</h1>
+
+    
+        
+</body>
+</html>

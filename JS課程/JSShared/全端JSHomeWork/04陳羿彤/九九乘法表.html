@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九九乘法表</title>
+    <style>
+        body {
+            font-family: 微軟正黑體;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 2px solid #888888;
+
+        }
+
+        td {
+            border-left: black;
+            padding: 5px;
+            border-right: 2px solid #888888;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <script>
+            for (i = 1; i <= 9; i++) {
+                document.write("<tr>");
+                for (j = 2; j <= 9; j++) {
+                    sum = i * j;
+                    document.write("<td>" + j + "*" + i + "=" + sum + "</td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+</body>
+
+</html>

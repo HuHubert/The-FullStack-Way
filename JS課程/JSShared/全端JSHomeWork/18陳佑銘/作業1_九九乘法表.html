@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    .st1{
+    background-color: aqua;
+        border: black 1px solid;
+        border-collapse:separate;
+        border-collapse: collapse;
+        }
+    .st2{
+        border-right: blue 1px solid;
+    }
+
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <script>
+
+        
+
+        document.write("<table class='st1'>");
+          for (i = 1; i < 10; i++) 
+          {
+              document.write("<tr>")
+            for (j = 2; j < 10; j++) 
+            {
+                document.write("<td class='st2' >" + j + "*" + i + "=" + i * j + "</td>")
+            }
+            document.write("</tr>")
+            }
+        document.write("</table>");
+
+
+
+    </script>
+
+
+</body>
+
+</html>

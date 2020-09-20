@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>02Mouseoverout.html</title>
+</head>
+<body>
+    <img id="idimg1" src="Images/star.gif" />
+    <img id="idimg2" src="Images/star.gif" />
+    <img id="idimg3" src="Images/star.gif" />
+    <img id="idimg4" src="Images/star.gif" />
+    <img id="idimg5" src="Images/star.gif" />
+    <span id="cli"></span>
+    <div id="write"></div>
+    <script>        
+        document.querySelector("#idimg1").onmouseover=mouseover1;
+        document.querySelector("#idimg1").onmouseout=mouseout1;
+        document.querySelector("#idimg1").onclick=click1;  
+        document.querySelector("#idimg2").onmouseover=mouseover2;
+        document.querySelector("#idimg2").onmouseout=mouseout2;
+        document.querySelector("#idimg2").onclick=click2;  
+        document.querySelector("#idimg3").onmouseover=mouseover3;
+        document.querySelector("#idimg3").onmouseout=mouseout3;
+        document.querySelector("#idimg3").onclick=click3;    
+        document.querySelector("#idimg4").onmouseover=mouseover4;
+        document.querySelector("#idimg4").onmouseout=mouseout4;
+        document.querySelector("#idimg4").onclick=click4;           
+        document.querySelector("#idimg5").onmouseover=mouseover5;
+        document.querySelector("#idimg5").onmouseout=mouseout5;
+        document.querySelector("#idimg5").onclick=click5;  
+        var wr=document.getElementById("write"); 
+        var cl=document.getElementById("cli"); 
+
+        function mouseover1() {
+            document.querySelector("#idimg1").src="Images/chngstar.gif"; 
+            wr.innerHTML="给1分"}
+        function mouseout1() {
+            document.querySelector("#idimg1").src="Images/star.gif";
+            wr.innerHTML=""}
+        function click1(){cl.innerHTML="特别差，给1分"};     
+        function mouseover2() {
+           document.querySelector("#idimg1").src="Images/chngstar.gif";
+           document.querySelector("#idimg2").src="Images/chngstar.gif";
+           wr.innerHTML="给2分"}
+        function mouseout2() {
+            document.querySelector("#idimg1").src="Images/star.gif";
+            document.querySelector("#idimg2").src="Images/star.gif";
+            wr.innerHTML=""} 
+        function click2(){cl.innerHTML="很差，给2分"};           
+        function mouseover3() {
+           document.querySelector("#idimg1").src="Images/chngstar.gif";
+           document.querySelector("#idimg2").src="Images/chngstar.gif";
+           document.querySelector("#idimg3").src="Images/chngstar.gif";
+           wr.innerHTML="给3分"}
+        function mouseout3() {
+            document.querySelector("#idimg1").src="Images/star.gif";
+            document.querySelector("#idimg2").src="Images/star.gif";
+            document.querySelector("#idimg3").src="Images/star.gif";
+            wr.innerHTML=""}
+        function click3(){cl.innerHTML="一般般，给3分"};       
+        function mouseover4() {
+           document.querySelector("#idimg1").src="Images/chngstar.gif";
+           document.querySelector("#idimg2").src="Images/chngstar.gif";
+           document.querySelector("#idimg3").src="Images/chngstar.gif";
+           document.querySelector("#idimg4").src="Images/chngstar.gif";
+           wr.innerHTML="给4分"}
+        function mouseout4() {
+            document.querySelector("#idimg1").src="Images/star.gif";
+            document.querySelector("#idimg2").src="Images/star.gif";
+            document.querySelector("#idimg3").src="Images/star.gif";
+            document.querySelector("#idimg4").src="Images/star.gif";
+            wr.innerHTML=""}
+            function click4(){cl.innerHTML="很好，给4分"};  
+        function mouseover5() {
+           document.querySelector("#idimg1").src="Images/chngstar.gif";
+           document.querySelector("#idimg2").src="Images/chngstar.gif";
+           document.querySelector("#idimg3").src="Images/chngstar.gif";
+           document.querySelector("#idimg4").src="Images/chngstar.gif";
+           document.querySelector("#idimg5").src="Images/chngstar.gif";
+           wr.innerHTML="给5分"}
+        function mouseout5() {
+            document.querySelector("#idimg1").src="Images/star.gif";
+            document.querySelector("#idimg2").src="Images/star.gif";
+            document.querySelector("#idimg3").src="Images/star.gif";
+            document.querySelector("#idimg4").src="Images/star.gif";
+            document.querySelector("#idimg5").src="Images/star.gif";
+            wr.innerHTML=""}
+            function click5(){cl.innerHTML="很好，给5分"}; 
+
+    </script>
+</body>
+</html>

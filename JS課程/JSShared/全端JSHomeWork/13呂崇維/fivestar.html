@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+
+<body>
+
+    <body>
+        <img id="idimg1" src="Images/star.gif" />
+        <img id="idimg2" src="Images/star.gif" />
+        <img id="idimg3" src="Images/star.gif" />
+        <img id="idimg4" src="Images/star.gif" />
+        <img id="idimg5" src="Images/star.gif" />
+        <p id="p1">尚未評分</p>
+        <script>
+            document.querySelector("#idimg1").onmouseover=mouseover;
+            document.querySelector("#idimg1").onmouseout=mouseout;      
+    
+            function mouseover() {
+               document.querySelector("#idimg1").src="Images/chngstar.gif"
+            }
+            function mouseout() {
+                document.querySelector("#idimg1").src="Images/star.gif"
+            }
+    
+        </script>
+        
+        <script>        
+            document.querySelector("#idimg2").onmouseover=mouseover;
+            document.querySelector("#idimg2").onmouseout=mouseout;      
+    
+            function mouseover() {
+               document.querySelector("#idimg1").src="Images/chngstar.gif"
+               document.querySelector("#idimg2").src="Images/chngstar.gif"
+            }
+    
+            function mouseout() {
+                document.querySelector("#idimg1").src="Images/star.gif"
+                document.querySelector("#idimg2").src="Images/star.gif"
+            }
+        </script>
+    
+    <script>
+        document.querySelector("#idimg3").onmouseover=mouseover;
+        document.querySelector("#idimg3").onmouseout=mouseout;      
+    
+        function mouseover() {
+           document.querySelector("#idimg1").src="Images/chngstar.gif"
+           document.querySelector("#idimg2").src="Images/chngstar.gif"
+           document.querySelector("#idimg3").src="Images/chngstar.gif"
+        }
+        function mouseout() {
+            document.querySelector("#idimg1").src="Images/star.gif"
+            document.querySelector("#idimg2").src="Images/star.gif"
+            document.querySelector("#idimg3").src="Images/star.gif"
+        }
+    </script>
+    
+    <script>
+        document.querySelector("#idimg4").onmouseover=mouseover;
+        document.querySelector("#idimg4").onmouseout=mouseout;      
+    
+        function mouseover() {
+           document.querySelector("#idimg1").src="Images/chngstar.gif"
+           document.querySelector("#idimg2").src="Images/chngstar.gif"
+           document.querySelector("#idimg3").src="Images/chngstar.gif"
+           document.querySelector("#idimg4").src="Images/chngstar.gif"
+    
+        }
+        function mouseout() {
+            document.querySelector("#idimg1").src="Images/star.gif"
+            document.querySelector("#idimg2").src="Images/star.gif"
+            document.querySelector("#idimg3").src="Images/star.gif"
+            document.querySelector("#idimg4").src="Images/star.gif"
+    
+        }
+    </script>
+    
+    <script>
+        document.querySelector("#idimg5").onmouseover=mouseover;
+        document.querySelector("#idimg5").onmouseout=mouseout;      
+    
+        function mouseover() {
+           document.querySelector("#idimg1").src="Images/chngstar.gif"
+           document.querySelector("#idimg2").src="Images/chngstar.gif"
+           document.querySelector("#idimg3").src="Images/chngstar.gif"
+           document.querySelector("#idimg4").src="Images/chngstar.gif"
+           document.querySelector("#idimg5").src="Images/chngstar.gif"
+        }
+        function mouseout() {
+            document.querySelector("#idimg1").src="Images/star.gif"
+            document.querySelector("#idimg2").src="Images/star.gif"
+            document.querySelector("#idimg3").src="Images/star.gif"
+            document.querySelector("#idimg4").src="Images/star.gif"
+            document.querySelector("#idimg5").src="Images/star.gif"
+        }
+    </script>
+    
+    <script>
+    
+        function f1() {
+            document.getElementById("p1").innerHTML = "1顆星"
+        }
+        function f2() {
+            document.getElementById("p1").innerHTML = "2顆星"
+        }
+        function f3() {
+            document.getElementById("p1").innerHTML = "3顆星"
+        }
+        function f4() {
+            document.getElementById("p1").innerHTML = "4顆星"
+        }
+        function f5() {
+            document.getElementById("p1").innerHTML = "5顆星"
+        }
+        document.querySelector("#idimg1").onclick = f1;
+        document.querySelector("#idimg2").onclick = f2;
+        document.querySelector("#idimg3").onclick = f3;
+        document.querySelector("#idimg4").onclick = f4;
+        document.querySelector("#idimg5").onclick = f5;
+    </script>
+    
+    </body>
+    </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>images</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #aaf;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .line {
+            height: 10px;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            margin: 80px 0;
+        }
+
+        .container {
+            width: 850px;
+            margin-bottom: 300px;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <div class="container">
+        <div class="row"><img src="./img/wallpaper.jpg" class="img-fluid" alt="Responsive image"></div>
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="row"><img src="./img/mi-pham-FtZL0r4DZYk-unsplash.jpg" class="img-fluid img-thumbnail"
+                alt="Responsive image"></div>
+    </div>
+
+    <div class="container">
+        <picture>
+            <source srcset="./img/smaller_landscape.jpg" media="(max-width: 500px) and (orientation: landscape)">
+            <source srcset="./img/default_landscape.jpg" media="(min-width: 500px) and (orientation: landscape)">
+            <source srcset="./img/smaller_portrait.jpg" media="(max-width: 500px) and (orientation: portrait)">
+            <source srcset="./img/default_portrait.jpg" media="(min-width: 500px) and (orientation: portrait)">
+            <img src="./img/omar-prestwich-gFqRJYCbCbE-unsplash.jpg" class="img-fluid img-thumbnail"
+                alt="My default image">
+        </picture>
+    </div>
+
+    <div class="container">
+        <figure class="figure">
+            <img src="./img/trung-thanh-LgdDeuBcgIY-unsplash.jpg" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption text-left">A caption for the above image.</figcaption>
+        </figure>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

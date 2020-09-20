@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOX model</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+    <style>
+        body {
+            margin-top: 50vh;
+            margin-bottom: 50vh;
+        }
+
+        .line {
+            height: 10px;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            margin: 50vh 0;
+        }
+
+        .container {
+            margin: 0px auto;
+            width: 960px;
+        }
+
+        .content-box {
+            width: 500px;
+            margin: 20px auto;
+            outline: 1px solid #ccc;
+            background-color: #faa;
+            box-sizing: border-box;
+            border: 1px solid red;
+        }
+
+        .border-box {
+            width: 500px;
+            margin: 20px auto;
+            outline: 1px solid #ccc;
+            background-color: #afa;
+            padding-right: 50px;
+            padding-left: 50px;
+            box-sizing: border-box;
+            /* border: 1px solid red; */
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #aaf;
+            margin: 10px;
+        }
+
+        .box1 {
+            border: 10px solid #ccc;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="content-box">
+            <label for="">Width:</label><span id="contentWidth"></span>
+        </div>
+
+        <div class="border-box">
+            <label for="">Width:</label><span id="borderWidth"></span>
+        </div>
+
+    </div>
+
+    <div class="line"></div>
+
+    <br>
+
+    <div class="container">
+        <div class="box box1">BOX1</div>
+        <div class="box box2">BOX2</div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+        $('#contentWidth').text($('.content-box').width());
+        $('#borderWidth').text($('.border-box').width());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework_02</title>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        .container {
+            width: 600px;
+            margin: 10px auto;
+            background-color: #FCFCFC;
+            border: 1px solid #000;
+            box-shadow: 10px 10px 8px #888888;
+        }
+
+        .tb-block {
+            margin: 20px auto;
+            border-bottom: 1px solid #000;
+        }
+
+        .tb-block p {
+            color: gray;
+            font-size: .5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">JS_HomeWork</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="hw_01.html">Homwork_01</a>
+                <a class="nav-item nav-link active" href="hw_02.html">Homwork_02 <span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="hw_03.html">Homwork_03</a>
+                <a class="nav-item nav-link" href="hw_04.html">Homwork_04</a>
+                <a class="nav-item nav-link" href="hw_05.html">Homwork_05</a>
+            </div>
+        </div>
+    </nav>
+    <form class="container" action="#" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Form checked</legend>
+            <div class="tb-block">
+                <label for="account">姓名:</label>
+                <input id="account" name="account1" type="text" minlength="2"><span id="txtName"></span>
+                <p>(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</p>
+            </div>
+            <div class="tb-block">
+                <label for="pw">密碼:</label>
+                <input type="password" id="pw" name="password" maxlength="6"><span id="txtPw"></span>
+                <p>(1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元)</p>
+            </div>
+            <div class="tb-block" style="border-bottom: none;">
+                <label for="date">日期:</label>
+                <input type="text" id="date" name="date1"><span id="txtDate"></span>
+                <p>(格式:西元年/月/日yyyy/MM/DD)</p>
+            </div>
+            <div class="tb-block" style="border-bottom: none;">
+                <input type="button" value="送出">
+                <input type="reset" value="清除">
+            </div>
+        </fieldset>
+    </form>
+
+    <!-- javascript -->
+    <script>
+        // 姓名驗證
+        document.querySelector("#account").addEventListener("blur", () => {
+            let name = document.querySelector("#account").value;
+            let nameLen = name.length;
+            let i;
+            let showName = document.querySelector("#txtName");
+            if (name == "") {
+                showName.innerHTML = '<span style="color: red;font-weight: 900;"><i class="fas fa-times"></i> 不可空白</span>';
+            }
+            else if (nameLen >= 2) {
+                for (i = 0; i < nameLen; i++) {
+                    let ch = name.charCodeAt(i);
+                    if (ch >= 0x4e00 && ch <= 0x9FFF)
+                        showName.innerHTML = '<span style="color: green;font-weight: 900;"><i class="fas fa-check-circle"></i> 正確</span>';
+                }
+            } else {
+                showName.innerHTML = '<span style="color: red;font-weight: 900;"><i class="fas fa-times"></i> 格式錯誤，字數需>2且必須為中文字</span>';
+            }
+
+        });
+        // 密碼驗證
+        document.querySelector("#pw").addEventListener("blur", () => {
+            let pw = document.querySelector("#pw").value;
+            let pwLen = pw.length;
+            let flag1 = true, flag2 = true, k;
+            let showPw = document.querySelector("#txtPw");
+            if (pw == "") {
+                showPw.innerHTML = '<span style="color: red;font-weight: 900;"><i class="fas fa-times"></i> 不可空白</span>';
+            } else if (pwLen >= 6) {
+                for (k = 0; k < pwLen; k++) {
+                    let pwinput = pw.charAt(k).toUpperCase();
+                    console.log(pwinput);
+                    if(pwinput >= "A" && pwinput <= "Z")
+                        flag1 = true;
+                    else if(pwinput >= "0" && pwinput <= "9")
+                        flag2 = true;
+                    if(flag1&&flag2) break;
+                }
+                if (flag1 && flag2)
+                    showPw.innerHTML = '<span style="color: green;font-weight: 900;"><i class="fas fa-check-circle"></i> 正確</span>';
+                else
+                    showPw.innerHTML = '<span style="color: red;font-weight: 900;"><i class="fas fa-times"></i> 格式錯誤</span>';
+                    
+            }
+            else {
+                showPw.innerHTML = '<span style="color: red;font-weight: 900;"><i class="fas fa-times"></i> 密碼長度必須>6</span>';
+            }
+        });
+            // 日期驗證
+        document.querySelector("#date").addEventListener("blur",(year, month, day)=>{
+            //使用者輸入值
+            let date = document.querySelector("#date").value;   //string
+            if (!month || !day) {  
+                if (month == '') {  
+                    date = year + "/1/1";  
+                }else if (day == '') {  
+                    date = year + '/' + month + '/1';  
+                }else {  
+                    date = year.replace(/[.-]/g,'/');  
+                }  
+            }else {  
+                date = year + '/' + month + '/' + day;  
+            }  
+            date = date.replace(/\/0+/g, '/');
+
+            let showDate = document.querySelector("#txtDate");
+            let accDate = new Date(date); //obj
+            let tempDate = d.getFullYear()+"/";
+            tempDate += (d.getMonth()+1)+"/";
+            tempDate += d.getDate(); 
+            //輸入值轉換成Date格式
+            if(date == ""){
+                showDate.innerHTML = '<span style="color: red;font-weight: 900;"><i class="fas fa-times"></i> 日期不可空白</span>';
+            }else if(date != tempDate){
+                showDate.innerHTML = '<span style="color: red;font-weight: 900;"><i class="fas fa-times"></i> 格式錯誤</span>';
+            }else{
+                showDate.innerHTML = '<span style="color: green;font-weight: 900;"><i class="fas fa-check-circle"></i> 正確</span>';
+            }
+
+        });
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

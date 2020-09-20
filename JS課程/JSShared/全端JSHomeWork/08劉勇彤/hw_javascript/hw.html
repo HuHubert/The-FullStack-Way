@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js hw</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+
+        * {
+            font-family: 'Play', 'sans-serif', '微軟正黑體';
+            font-size: 24px;
+            font-weight: bolder;
+            /* border: 1px solid red; */
+            /* ^ 敬請測試 ^ */
+        }
+
+        html {
+            scroll-padding-top: 170px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-image: url('images/bg.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        fieldset {
+            width: 700px;
+            padding: 0px 20px;
+            margin: auto;
+            border: 5px double indianred;
+            border-radius: 15px;
+        }
+
+        label {
+            font-size: 0.7rem;
+        }
+
+        legend {
+            font-size: 1.2rem;
+            color: indigo;
+        }
+
+        p {
+            color: gray;
+            font-size: x-small;
+        }
+
+        footer {
+            background-color: dimgrey;
+            text-align: center;
+            padding: 10px;
+            color: white;
+        }
+
+        .span1 {
+            font-size: small;
+        }
+
+        .navbar {
+            padding: 30px 50px;
+            background-color: rgba(60, 60, 60, 0.7);
+            font-weight: bolder;
+        }
+
+        .box {
+            background-color: lightgray;
+            border-radius: 30px;
+            padding: auto;
+            box-shadow: 10px 10px 30px;
+        }
+
+        .hw {
+            padding: 40px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+
+        .hw1content {
+            margin: 40px auto;
+        }
+
+        .tb1 {
+            border: 3px double rgb(90, 215, 255);
+            width: 400px;
+            border-collapse: collapse;
+            background-color: powderblue;
+            margin: auto;
+        }
+
+        .tb1 tr td {
+            font-size: smaller;
+            color: dimgray;
+            text-align: left;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-right: 3px double deepskyblue;
+        }
+
+        .tb1 tr td:hover {
+            background-color: cornflowerblue;
+            color: white;
+        }
+
+        .hw2content {
+            text-align: left;
+            margin: 40px auto;
+        }
+
+        .stats1 {
+            font-size: 0.7rem;
+            padding-left: 50px;
+            border-bottom: 2px solid indigo;
+            margin-top: 20px;
+        }
+
+        .stats2 {
+            font-size: 0.7rem;
+            padding-left: 50px;
+            margin-top: 20px;
+        }
+
+        .submit {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .hw3content {
+            text-align: center;
+            margin: 40px auto 0 auto;
+        }
+
+        .star {
+            text-align: center;
+            margin: auto;
+        }
+
+        .rateDiv {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hw4content {
+            text-align: center;
+            margin: 40px auto 0 auto;
+        }
+
+        .carouselBtnNum {
+            text-align: center;
+            margin: 10px auto;
+            justify-content: center;
+        }
+
+        .btnNum {
+            height: 50px;
+            width: 50px;
+            margin: auto 5px;
+        }
+
+        .carouselBtnFunc {
+            text-align: center;
+            margin: 10px auto 40px auto;
+            justify-content: center;
+        }
+
+        .btnFunc {
+            height: 50px;
+            width: 50px;
+            margin: auto 5px;
+        }
+
+        .hw5content {
+            text-align: center;
+            margin: 40px auto;
+            justify-content: space-between;
+            background-color: antiquewhite;
+            border: 1px double black;
+            border-radius: 10px;
+        }
+
+        .hw5selector {
+            padding: 40px;
+
+        }
+
+        .hw5info {
+            background-color: white;
+            padding: 40px;
+            margin: 10px;
+            border: 1px double black;
+            border-radius: 10px;
+        }
+
+        .inSel {
+            font-size: smaller;
+        }
+    </style>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-inverse fixed-top navbar-dark">
+        <a class="navbar-brand" href="#">JavaScript</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon span1"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#hw1">hw01</a>
+                <a class="nav-item nav-link active" href="#hw2">hw02</a>
+                <a class="nav-item nav-link active" href="#hw3">hw03</a>
+                <a class="nav-item nav-link active" href="#hw4">hw04</a>
+                <a class="nav-item nav-link active" href="#hw5">hw05</a>
+            </div>
+        </div>
+    </nav>
+    <!-- main -->
+    <!-- space -->
+    <div class="container-fluid">
+        <div class="space" style="height: 250px;"></div>
+    </div>
+    <!-- hw01 -->
+    <div class="container-fluid" id="hw1">
+        <div class="container box">
+            <div class="hw">
+                <h2 class="title">hw01 : Times Table</h2>
+                <div class="hw1content">
+                    <table class="tb1">
+                        <script>
+                            for (var i = 2; i < 10; i++) {
+                                document.write("<tr>")
+                                for (var j = 1; j < 10; j++) {
+                                    document.write("<td>" + j + "x" + i + "=" + (i * j) + "</td>")
+                                }
+                                document.write("</tr>")
+                            }
+                            document.write("</tr>")
+                        </script>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- space -->
+    <div class="container-fluid">
+        <div class="space" style="height: 250px;"></div>
+    </div>
+    <!-- hw02 -->
+    <div class="container-fluid" id="hw2">
+        <div class="container box">
+            <div class="hw">
+                <h2 class="title">hw02 : Form</h2>
+                <div class="hw2content">
+                    <form action="#" method="get" enctype="multipart/form-data">
+                        <fieldset>
+                            <legend class="w-auto" style="padding-left: 15px;padding-right: 15px;">Form Check</legend>
+                            <div class="stats1">
+                                <label for="acc">姓名：</label>
+                                <input type="text" id="acc" name="account" autocomplete="off" autofocus required
+                                    placeholder="請輸入大名" value="" onblur="checkAcc()">
+                                <span class="span1" id="idacc"></span>
+                                <p class="description">(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</p>
+                            </div>
+                            <div class="stats1">
+                                <label for="pwd">密碼：</label>
+                                <input type="password" id="pwd" value="" name="password" required placeholder="請輸入密碼"
+                                    value="" onblur="checkPwd()">
+                                <span class="span1" id="idpwd"></span>
+                                <p class="description">(1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^*]</p>
+                            </div>
+                            <div class="stats2">
+                                <label for="date1">日期：</label>
+                                <input type="text" id="date1" name="date" autocomplete="off" required
+                                    placeholder="ex:2000/02/29" onblur="checkDate()">
+                                <span class="span1" id="iddate"></span>
+                                <p class="description">格式: 西元年/月/日 yyyy/mm/dd</p>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- space -->
+    <div class="container-fluid">
+        <div class="space" style="height: 250px;"></div>
+    </div>
+    <!-- hw03 -->
+    <div class="container-fluid" id="hw3">
+        <div class="container box">
+            <div class="hw">
+                <h2 class="title">hw03 : Rating</h2>
+                <div class="hw3content d-flex">
+                    <div class="star">
+                        <img src="images/star.gif" class="starImg" onmouseover="hoverStar(0)" onclick="clickStar(0)">
+                        <img src="images/star.gif" class="starImg" onmouseover="hoverStar(1)" onclick="clickStar(1)">
+                        <img src="images/star.gif" class="starImg" onmouseover="hoverStar(2)" onclick="clickStar(2)">
+                        <img src="images/star.gif" class="starImg" onmouseover="hoverStar(3)" onclick="clickStar(3)">
+                        <img src="images/star.gif" class="starImg" onmouseover="hoverStar(4)" onclick="clickStar(4)">
+                    </div>
+                </div>
+                <div class="rateDiv">
+                    <span id="rating">打分中... 0分</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- space -->
+    <div class="container-fluid">
+        <div class="space" style="height: 250px;"></div>
+    </div>
+    <!-- hw04 -->
+    <div class="container-fluid" id="hw4">
+        <div class="container box">
+            <div class="hw">
+                <h2 class="title">hw04 : Ad.Carousel</h2>
+                <div class="hw4content">
+                    <div id="carouselDiv"></div>
+                </div>
+                <div class="carouselBtnNum d-flex">
+                    <img src="images/num1.png" class="btnNum" onclick="clickNum(1)">
+                    <img src="images/num2.png" class="btnNum" onclick="clickNum(2)">
+                    <img src="images/num3.png" class="btnNum" onclick="clickNum(3)">
+                    <img src="images/num4.png" class="btnNum" onclick="clickNum(4)">
+                    <img src="images/num5.png" class="btnNum" onclick="clickNum(5)">
+                </div>
+                <div class="carouselBtnFunc d-flex">
+                    <img src="images/funcReturn.png" class="btnFunc" onclick="btnReturn()">
+                    <!-- <img src="images/funcPause.png" class="btnFunc" onclick="btnPausePlay()" id="timed"> -->
+                    <img src="images/funcNext.png" class="btnFunc" onclick="btnNext()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- space -->
+    <div class="container-fluid">
+        <div class="space" style="height: 250px;"></div>
+    </div>
+    <!-- hw05 -->
+    <div class="container-fluid" id="hw5">
+        <div class="container box">
+            <div class="hw">
+                <h2 class="title">hw05 : Calendar</h2>
+                <div class="hw5content d-flex">
+                    <div class="hw5selector">
+                        <h5>Welcome!</h5>
+                        <select id="selectYear" onchange="createSelect(1)"></select>
+                        <span class="inSel">年</span>
+                        <select id="selectMonth" onchange="createSelect(2)"></select>
+                        <span class="inSel">月</span>
+                        <select id="selectDate" onchange="createSelect(3)"></select>
+                        <span class="inSel">日</span>
+                    </div>
+                    <div class="hw5info">
+                        <h5 style="background-color: cadetblue;color:white">Information</h5>
+                        <span id="information">選擇的日期是：</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- space -->
+    <div class="container-fluid">
+        <div class="space" style="height: 250px;"></div>
+    </div>
+    <!-- footer -->
+    <footer>
+        JavaScript homework
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // hw02 function
+        function checkAcc() {
+            let theAccObj = document.getElementById("acc");
+            let theAccObjVal = theAccObj.value;
+            let span = document.getElementById("idacc");
+            let theAccLen = theAccObjVal.length;
+
+            span.innerHTML = "";
+            if (theAccObjVal == "") {
+                span.innerHTML = "你必須輸入姓名!";
+            }
+            else if (theAccLen >= 2) {
+                if (theAccObjVal.match(/^[\u4E00-\u9FA5]+$/gi)) {
+                    span.innerHTML = "格式正確!"
+                }
+                else {
+                    span.innerHTML = "姓名格式不正確"
+                }
+            }
+            else {
+                span.innerHTML = "姓名長度必須至少兩個字";
+            }
+        }
+
+        function checkPwd() {
+            let thePwdObj = document.getElementById("pwd");
+            let thePwdObjVal = thePwdObj.value;
+            let span = document.getElementById("idpwd");
+            let thePwdLen = thePwdObjVal.length;
+
+            span.innerHTML = "";
+            if (thePwdObjVal == "") {
+                span.innerHTML = "你必須輸入密碼!";
+            }
+            else if (thePwdLen >= 6) {
+                if (thePwdObjVal.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}|":?<>]).{6,}$/)) {
+                    span.innerHTML = "格式正確!"
+                }
+                else {
+                    span.innerHTML = "密碼格式不正確"
+                }
+            }
+            else {
+                span.innerHTML = "密碼長度必須大於6位";
+            }
+        }
+
+        function checkValid(dateObj) {
+            let theDate1Obj = document.getElementById("date1");
+            let theDate1ObjVal = theDate1Obj.value;
+            var dateObj = theDate1ObjVal.split("/");
+
+            var theMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            var theYear = parseInt(dateObj[0]);
+            var theMonth = parseInt(dateObj[1]);
+            var theDay = parseInt(dateObj[2]);
+            var isLeap = new Date(theYear, 1, 29).getDate() === 29;
+
+            if (isLeap) {
+                limitInMonth[1] = 29;
+            }
+            return theDay <= limitInMonth[theMonth - 1];
+        }
+
+        function checkDate() {
+            let theDate1Obj = document.getElementById("date1");
+            let theDate1ObjVal = theDate1Obj.value;
+            let span = document.getElementById("iddate");
+
+            span.innerHTML = "";
+            if (theDate1ObjVal == "") {
+                span.innerHTML = "你必須輸入日期!";
+            }
+            else {
+                if (theDate1ObjVal.match(/^([0-9]{4})[./]{1}([0-9]{1,2})[./]{1}([0-9]{1,2})$/)) {
+                    if (checkValid() == true) {
+                        span.innerHTML = "格式正確!";
+                    }
+                    else {
+                        span.innerHTML = "沒有這個日期";
+                    }
+                }
+                else {
+                    span.innerHTML = "格式錯誤";
+                }
+            }
+        }
+
+        // hw03 function
+        let stars = document.querySelectorAll(".starImg");
+
+        function hoverStar(num) {
+            for (let i = 0; i < stars.length; i++) {
+                stars[i].src = "images/star.gif";
+            }
+            if (num !== undefined) {
+                for (let i = 0; i <= num; i++) {
+                    stars[i].src = "images/chngstar.gif";
+                    document.getElementById("rating").innerHTML = "打分中... " + (i + 1) + "分";
+                }
+            }
+        }
+
+        function clickStar(num) {
+            document.getElementById("rating").innerHTML = "你給出 " + (num + 1) + "分!";
+        }
+
+        // hw04 function
+        var jsImg = new Array("c01.jpg", "c02.jpg", "c03.jpg", "c04.jpg", "c05.jpg");
+        var jsImgLen = jsImg.length;
+        var i = 0;
+        var cDiv = document.getElementById("carouselDiv");
+
+        setInterval("carouselImg()", 3000);
+
+        function carouselImg() {
+            cDiv.innerHTML = "<img src='images/" + jsImg[i] + "'width=1000px height=200px>";
+            i++;
+            if (i >= jsImgLen) {
+                i = 0;
+            }
+        }
+
+        function clickNum(numBtn) {
+            if (numBtn) {
+                i = numBtn - 1;
+                cDiv.innerHTML = "<img src='images/" + jsImg[i] + "'width=1000px height=200px>";
+            }
+        }
+
+        function btnReturn() {
+
+            if (i > 0 && i <= 4) {
+                i--;
+                cDiv.innerHTML = "<img src='images/" + jsImg[i] + "'width=1000px height=200px>";
+            }
+            else if (i == 0) {
+                i = 4;
+                cDiv.innerHTML = "<img src='images/" + jsImg[i] + "'width=1000px height=200px>";
+            }
+        }
+
+        // 未完成 待修改
+        // function btnPausePlay() {
+        //     window.clearTimeout();
+        //     document.querySelector("#timed").src = "/images/funcPlay.png"
+        //     cDiv.innerHTML = "<img src='images/" + jsImg[i] + "'width=1000px height=200px>";
+
+        // }
+
+        function btnNext() {
+            if (i >= 0 && i < 4) {
+                i++;
+                cDiv.innerHTML = "<img src='images/" + jsImg[i] + "'width=1000px height=200px>";
+            }
+            else if (i == 4) {
+                i = 0;
+                cDiv.innerHTML = "<img src='images/" + jsImg[i] + "'width=1000px height=200px>";
+            }
+        }
+
+        // hw05 function
+        window.onload = createSelect(0);
+
+        function createSelect(s) {
+            let years = document.getElementById("selectYear");
+            let months = document.getElementById("selectMonth");
+            let dates = document.getElementById("selectDate");
+            let d = new Date();
+            let maxYear = d.getFullYear();
+            let minYear = d.getFullYear() - 10;
+
+            switch (s) {
+                case 0:
+                    years.innerHTML = "";
+                    for (let i = minYear; i <= maxYear; i++) {
+                        let op = document.createElement("option");
+                        op.value = i;
+                        op.innerHTML = i;
+                        years.appendChild(op);
+                    }
+                case 1:
+                    months.innerHTML = "";
+                    for (let j = 1; j <= 12; j++) {
+                        let op = document.createElement("option");
+                        op.value = j;
+                        op.innerHTML = j;
+                        months.appendChild(op);
+                    }
+                case 2:
+                    let day = new Date(years.value, months.value, 0);
+                    let datesInMonth = day.getDate();
+                    dates.options.length = 0;
+                    for (let k = 1; k < datesInMonth + 1; k++) {
+                        let op = document.createElement("option");
+                        op.value = k;
+                        op.innerHTML = k;
+                        dates.appendChild(op);
+                    }
+                case 3:
+                    document.getElementById("information").innerHTML = "選擇的日期是：" + years.value + " 年 " + months.value + " 月 " + dates.value + " 日";
+                    break;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

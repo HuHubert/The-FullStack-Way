@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+
+            margin: 0 auto;
+            background-color: #ccc;
+            padding: 10px;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+        }
+
+        .box {
+            text-align: center;
+            font-size: 2rem;
+            width: 500px;
+            /* height: 100px; */
+        }
+
+        .box1 {
+            flex-shrink: 2;
+        }
+
+        .box2 {
+            flex-shrink: 0;
+        }
+
+        .box3 {
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="box autobg box1">box1</div>
+            <div class="box autobg box2">box2</div>
+            <div class="box autobg box3">box3</div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max - 50) + 100);
+        }
+
+        function getRBGA() {
+            return `rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},1)`
+        }
+
+        const elements = document.querySelectorAll('.autobg');
+        Array.from(elements).forEach((element, index) => {
+            element.style.backgroundColor = getRBGA();
+        });
+
+    // $('.autobg').each(function (index, currentElement) {
+    //     currentElement.style.backgroundColor = getRBGA();
+    // });
+
+    </script>
+</body>
+
+</html>

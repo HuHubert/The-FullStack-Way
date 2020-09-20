@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work form check</title>
+    <style>
+        .prompt {
+            color: gray;
+            font-size: smaller;
+        }
+
+        fieldset {
+            border-color: aqua;
+            border-radius: 15px;
+        }
+
+        .inimg {
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>Form Check</legend>
+            <div class="">
+                <label for="">姓名：</label>
+                <input type="text" id="name">
+
+                <label for="" id="labname"></label><br>
+                <label class="prompt" for="">(1.不可空白，2.至少2個字以上，3.必須全部為中文字)</label>
+                <hr>
+                <label for="">密碼：</label>
+                <input type="password" id="password">
+
+                <label for="" id="labPwd"></label><br>
+                <label class="prompt" for="">(1.不可空白，2.至少6個字且必須包含字母，數字，特殊字元[!@#$%^&*])</label>
+                <hr>
+                <label for="">日期：</label>
+                <input type="date" id="data">
+                <br>
+                <label class="prompt" for="">格式：西元年/月/日 yyyy/MM/dd</label>
+                <label for="" id="labDate"></label>
+                <hr>
+                <div style="text-align: center;"><button onclick="checkInput()">送出</button><span>
+                    </span><button onclick="clean()">清除</button></div>
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+            
+        function checkInput() {
+
+            let dateInput = document.getElementById("data").value;
+            let dateLab = document.getElementById("labDate");
+            let dateStr = String(dateInput);
+            let passLab = document.getElementById("labPwd");
+            let nameLab = document.getElementById("labname");
+            let nameInput = document.getElementById("name").value;
+            let re = /[^\u4e00-\u9FA5]/;// /[^\u4e00-\u9FA5]/中文範圍
+            //let regx = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[~!@#$%^&*])[\da-zA-Z~!@#$%^&*]{6,}$/;
+            let passInput = document.getElementById("password").value;
+            let passStr = String(passInput);
+
+            console.log(nameInput);
+            console.log(passInput);
+            console.log(dateInput);
+
+            let reg = rexPassword = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+`\-={}\[\]:";'<>?,.\/]).{6,}$/;
+
+            //let reg = /^(?![A-z0-9]+$)(?![A-z~@*()_]+$)(?![0-9~@*()_]+$)([A-z0-9~@*()_]{6,12})$/;
+            //var rexPassword = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+`\-={}\[\]:";'<>?,.\/]).{6,}$/;
+
+            if (nameInput == "") {
+                nameLab.innerHTML = "<img class='inimg' src='wrong.jpg'/>";
+                return alert("姓名不可空白");
+            } else if (re.test(nameInput)) {
+                nameLab.innerHTML = "<img class='inimg' src='wrong.jpg'/>";
+                return alert("必須全部為中文字");
+            } else if (nameInput.length < 2) {
+                nameLab.innerHTML = "<img class='inimg' src='wrong.jpg'/>";
+                return alert("姓名至少2個字以上");
+            } else {
+                nameLab.innerHTML = nameInput;
+                nameLab.innerHTML = "<img class='inimg' src='check.jpg'/>" + nameInput;
+            }
+
+            if (passInput == "") {
+                passLab.innerHTML = "<img class='inimg' src='wrong.jpg'/>";
+                return alert("密碼不可空白");
+            } else if (!reg.test(passStr)) {
+                passLab.innerHTML = "<img class='inimg' src='wrong.jpg'/>";
+                return alert("密碼需包含字母，數字，特殊字元[!@#$%^&*]");
+            } else if (passInput.length < 6) {
+                passLab.innerHTML = "<img class='inimg' src='wrong.jpg'/>";
+                return alert("密碼不可少於6個字");
+            } else {
+                passLab.innerHTML = "<img class='inimg' src='check.jpg'/>";
+            }
+
+            if (dateInput == "") {
+                alert("請輸入日期");
+                dateLab.innerHTML = "<img class='inimg' src='wrong.jpg'/>";
+            } else {
+                dateLab.innerHTML = "<img class='inimg' src='check.jpg'/>" + dateInput;
+            }
+
+
+
+
+
+            console.log(nameInput);
+            console.log(passInput);
+            console.log(dateInput);
+            // if (re.test(nameInput)) return alert("必須全部為中文字");
+            // if (nameInput == "") return alert("姓名不可空白");
+            // if (nameInput.length < 2) return alert("姓名至少2個字以上");
+            //檢查是否全為中文
+
+            //alert(nemaInput);
+
+        }
+        function clean() {
+            var nameLab = document.getElementById("labname");
+            var passLab = document.getElementById("labPwd");
+            var dateLab = document.getElementById("labDate");
+            document.getElementById("name").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("data").value = "";
+            dateLab.innerHTML = "";
+            nameLab.innerHTML = "";
+            passLab.innerHTML = "";
+
+            console.log(nameInput);
+            console.log(passInput);
+            console.log(dateInput);
+
+        }
+    </script>
+</body>
+
+</html>

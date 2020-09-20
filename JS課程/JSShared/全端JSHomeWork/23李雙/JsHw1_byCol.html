@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        var table = document.createElement('table');
+        table.rules="cols";
+        table.style.border="5px solid #0000FF";
+        table.style.borderColor="#0080FF";
+        table.style.backgroundColor="#ACD6FF";
+        
+
+        for (let i_col = 2; i_col < 10; i_col++) { 
+            var table_td = document.createElement('td');
+            var tmp_table = document.createElement('table');
+            for (let i_row = 1; i_row < 10; i_row++) {
+                var tRow = document.createElement('tr');
+                var tData = document.createElement('td');
+                tData.textContent=`${i_col} × ${i_row} = ${i_col * i_row}`;
+                tRow.appendChild(tData);
+                tmp_table.appendChild(tRow);
+            }
+
+            table_td.appendChild(tmp_table);
+            table.appendChild(table_td);
+        }
+        document.body.appendChild(table);
+        
+    
+    </script>
+</body>
+</html>

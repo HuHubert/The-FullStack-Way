@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 960px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: #ccc;
+            padding: 10px;
+        }
+
+        .row {
+            display: flex;
+            align-items: stretch;
+            height: 500px;
+        }
+
+        .box {
+            text-align: center;
+            font-size: 2rem;
+            width: 100px;
+            margin: 10px;
+        }
+
+        .box1 {
+            /* height: 150px; */
+        }
+
+        .box2 {
+            /* height: 200px; */
+        }
+
+        .box3 {
+            /* height: 100px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="box autobg box1">box1</div>
+            <div class="box autobg box2">box2</div>
+            <div class="box autobg box3">box3</div>
+        </div>
+    </div>
+
+
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max - 50) + 100);
+        }
+
+        function getRBGA() {
+            return `rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},1)`
+        }
+
+        const elements = document.querySelectorAll('.autobg');
+        Array.from(elements).forEach((element, index) => {
+            element.style.backgroundColor = getRBGA();
+        });
+
+    // $('.autobg').each(function (index, currentElement) {
+    //     currentElement.style.backgroundColor = getRBGA();
+    // });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表單</title>
+
+    <style>
+        fieldset {
+            width: 500px;
+            margin: 15px;
+            border: 1px solid green;
+            border-radius: 15px;
+        }
+
+
+        .st1 {
+            width: 450px;
+            border-bottom: 3px solid #F0F0F0;
+            margin: 20px;
+            padding-bottom: 10px;
+        }
+
+        .st2 {
+            color: rgb(134, 131, 131);
+            font-size: 75%;
+        }
+
+        .sub {
+            width: 450px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        span {
+            color: red;
+            font-size: 80%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <fieldset>
+        <legend>表單</legend>
+        <div class="st1">
+            <label class="t1" for="">姓名:</label>
+            <input type="text" id="account1" name="account" placeholder="請輸入姓名" size="10" autocomplete="off" onblur="checkAccount()">
+            <span id="idac"></span>
+
+            <div class="st2">(1.不可空白 2.至少兩個字以上 3.必須全部為中文)</div>
+        </div>
+
+        <div class="st1">
+            <label class="t1" for="pwd1"> 密碼:</label>
+            <input type="password" id="pwd1" name="pwd" placeholder="請輸入密碼" onblur="checkPwd()">
+            <span id="idsp"></span>
+            <div class="st2">(1.不可空白 2.至少6個字且包含英文字母、數字、特殊字元[!@#$%^&*])</div>
+
+        </div>
+
+        <div class="st1">
+            <label for="" class="t1">日期:</label>
+            <input type="date" name="birth" placeholder="ex:2020/01/31">
+            <div class="st2">格式:西元年/月/日 yyyy/mm/dd</div>
+        </div>
+
+        <div class="sub">
+            <input type="submit" value="送出">
+            <input type="reset" value="清除">
+        </div>
+
+    </fieldset>
+    <script>
+        function checkPwd() {
+            //取得idPwd元素
+            let thePwdObj = document.getElementById("pwd1");
+            //取得idPwd元素值
+            let thePwdObjVal = thePwdObj.value;
+            let thePwd = document.getElementById("pwd1").value;
+            let spanPwd = document.getElementById("idsp");
+            let thePwdLen = thePwd.length;
+            let flag1 = false, flag2 = false,flag3=false;
+
+            //判斷元素值是否為空白，密碼長度是否大於6
+            //如果長度是否大於6，判斷是否包含字母、數字、特殊符號
+            if (thePwd == "")
+                spanPwd.innerHTML = "密碼不可空白";
+            else if (thePwdLen >= 6) {
+                for (let i = 0; i < thePwdLen; i++) {
+                    let ch = thePwd.charAt(i).toUpperCase();
+                    console.log(ch);
+                    if (ch >= "A" && ch <= "Z")
+                        flag1 = true;
+                    else if (ch >= "0" && ch <= "9")
+                        flag2 = true;
+                    else if(ch == "!" || ch=="@" || ch=="#" || ch=="$" || ch=="%" || ch=="^" || ch=="&" || ch=="*")
+                        flag3 = true;
+                    if (flag1 && flag2 && flag3) break;
+                }
+                if (flag1 && flag2 && flag3)
+                    spanPwd.innerHTML = "正確";
+                else
+                    spanPwd.innerHTML = "必須包含英文與數字與特殊字元";
+
+            }
+            else {
+                spanPwd.innerHTML = "密碼長度必須大於6";
+            }
+        }
+    </script>
+    <script>
+        function checkAccount() {
+            let theAcObj = document.getElementById("account1");
+            let theAcObjVal = theAcObj.value;
+            let theAc = document.getElementById("account1").value;
+            let spanAc = document.getElementById("idac");
+            let theAcLen = theAc.length;
+            let flagac1 = false;
+
+            if (theAc == "")
+                spanAc.innerHTML = "名稱不可空白";
+            else if (theAcLen >= 2) {
+                for (let i = 0; i < theAcLen; i++) {
+                    let ac = theAc.charAt(i).toUpperCase(); 
+                    console.log(ac);
+                    if (ac >= "\u4E00" && ac <= "\u9FFF")
+                        flagac1 = true;
+                    if (flagac1) break;
+                }
+                if (flagac1)
+                    spanAc.innerHTML = "正確";
+                else
+                    spanAc.innerHTML = "必須是中文切包含特殊字元";
+            }
+            else {
+                spanAc.innerHTML = "中文長度必須2個字";
+            }
+        }
+
+
+        
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

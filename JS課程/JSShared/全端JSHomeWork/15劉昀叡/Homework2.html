@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        fieldset {
+            width: 600px;
+            margin: 15px;
+            border: 1px solid #acd6ff;
+            border-radius: 15px;
+        }
+
+        legend {
+            color: royalblue;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .st1 {
+            border-bottom: 3px solid #F0F0F0;
+            margin: 20px;
+            padding-bottom: 10px;
+        }
+
+        span {
+            color: #a7a8aa
+        }
+
+        img{
+            width: 20px;
+            height:20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset style="margin: 0 auto;">
+            <legend>Form Check</legend>
+            <div class="st1">
+                <label for="account">姓名:</label>
+                <input type="text" id="name" name="name" autocomplete="off" placeholder="請輸入姓名" size="10"><label
+                    id="IdAlert"></label><br>
+                <span>(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</span>
+            </div>
+            <div class="st1">
+                <label for="pwd">密碼:</label>
+                <input type="password"  id="pwd" name="pwd" placeholder="請輸入密碼">
+                <label id="pwdCheck"></label><br>
+                <span>(1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*])</span>
+            </div>
+            <div class="st1">
+                <label>日期</label>
+                <input type="text" id="date" name="date" placeholder="ex:2000/2/29">
+                <label id="dateCheck"></label><br>
+                <span>格式:西元年/月/日 yyyy/MM/dd</span>
+            </div>
+        </fieldset>
+    </form>
+    <script>
+        let theDay = document.getElementById("date");
+        let dateCheck = document.getElementById("dateCheck");
+        theDay.addEventListener("blur", theDayCheck);
+
+        function theDayCheck(){
+            if (theDay.value == "") {
+                dateCheck.innerHTML = "<img src='x.jpg'>不可空白";
+            }else{
+                dateCheck.innerHTML = "<img src='o.png'>正確";
+            }
+        }
+
+        let pw = document.getElementById("pwd")
+        let pwdCheck = document.getElementById("pwdCheck");
+        pw.addEventListener("blur", PwdCheck);
+
+        function CheckEng() {
+            for (let i = 0; i < pw.value.length; i++) {
+                if (pw.value[i].toUpperCase() <= "Z" && pw.value[i].toUpperCase() >= "A") {
+                    return true;
+                    }
+            }
+        }
+ 
+        function CheckNum(){
+            for (let i = 0; i < pw.value.length; i++) {
+                if (parseInt(pw.value[i])<=9 && parseInt(pw.value[i])>=0) {
+                    return true;
+                }
+            }
+        }
+
+        function Checkspc(){
+            for (let i = 0; i < pw.value.length; i++) {
+                if (pw.value[i]=="!") {
+                    return true;
+                }else if(pw.value[i]=="@"){
+                    return true;
+                }else if(pw.value[i]=="#"){
+                    return true;
+                }else if(pw.value[i]=="$"){
+                    return true;
+                }else if(pw.value[i]=="%"){
+                    return true;
+                }else if(pw.value[i]=="^"){
+                    return true;
+                }else if(pw.value[i]=="&"){
+                    return true;
+                }else if(pw.value[i]=="*"){
+                    return true;
+                }
+            }
+        }
+
+        function PwdCheck() {
+            if (pw.value == "") {
+                pwdCheck.innerHTML = "<img src='x.jpg'>不可空白";
+            } else if (pw.value.length < 6) {
+                pwdCheck.innerHTML = "<img src='x.jpg'>至少六個字以上";
+            }
+            else if (CheckEng()!= true) {
+                pwdCheck.innerHTML = "<img src='x.jpg'>必須包含英文字母";
+            }else if(CheckNum()!= true){
+                pwdCheck.innerHTML = "<img src='x.jpg'>必須包含數字";
+            }
+            else if(Checkspc()!=true){
+                pwdCheck.innerHTML = "<img src='x.jpg'>必須包含特殊字元[!@#$%^&*]";
+            }
+            else{
+                pwdCheck.innerHTML = "<img src='o.png'>正確";
+            }
+        }
+
+
+        let n = document.getElementById("name");
+        let IdCheck = document.getElementById("IdAlert");
+        n.addEventListener("blur", NameCheck);
+        function NameCheck() {
+            if (n.value == "") {
+                IdCheck.innerHTML = "<img src='x.jpg'>不可空白"
+            } else if (n.value.length < 2) {
+                IdCheck.innerHTML = "<img src='x.jpg'>至少兩個字以上"
+            } else {
+                for (let i = 0; i < n.value.length; i++) {
+                    if (n.value[i].charCodeAt(0) >= 0x4e00 && n.value[i].charCodeAt(0) <= 0x9fff) {
+                        IdCheck.innerHTML = "<img src='o.jpg'>正確";
+                    }
+                    else {
+                        IdCheck.innerHTML = "<img src='x.jpg'>必須全部為中文字";
+                        break;
+                    }
+                }
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

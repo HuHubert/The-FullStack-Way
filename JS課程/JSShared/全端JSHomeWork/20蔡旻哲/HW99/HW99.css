@@ -1,0 +1,24 @@
+    .tb {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      list-style-type: none;
+      color: red;
+      background-color: skyblue;
+      border: 5px orange solid;
+      border-radius: 3px;
+
+    }
+
+    ul.tb {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .eleli {
+      border-right: 3px orange solid;
+      text-align: center;
+      padding-left: 10px;
+      line-height: 35px;
+      font-size: large;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>02Mouseoverout.html</title>
+</head>
+<body>
+    <img id="idimg1" src="Images/star.gif" />
+    <img id="idimg2" src="Images/star.gif" />
+    <img id="idimg3" src="Images/star.gif" />
+    <img id="idimg4" src="Images/star.gif" />
+    <img id="idimg5" src="Images/star.gif" />
+
+    <script>        
+        // document.querySelector("#idimg1").onmouseover=mouseover;
+        // document.querySelector("#idimg2").onmouseover=mouseover;
+        // document.querySelector("#idimg3").onmouseover=mouseover;
+        // document.querySelector("#idimg4").onmouseover=mouseover;
+        // document.querySelector("#idimg5").onmouseover=mouseover;
+
+        let imgs=document.querySelectorAll("img");
+        console.log(imgs[0]);
+        console.log(imgs[1]);
+        let imgsLen=imgs.length;
+        for(let i=0;i<imgsLen;i++){
+            imgs[i].onmouseover=mouseover;
+        }
+          
+
+        function mouseover() {
+        //    document.querySelector("#idimg").src="Images/chngstar.gif";
+           console.log(this.id);
+
+           let no=this.id.charAt(5);
+           console.log(no);
+
+           for(let i=0;i<no;i++){
+            // document.querySelector("#idimg"+i).src="Images/chngstar.gif";
+            imgs[i].src="Images/chngstar.gif";
+           }
+        }
+
+        function mouseout() {
+            document.querySelector("#idimg").src="Images/star.gif";
+        }
+    </script>
+</body>
+</html>

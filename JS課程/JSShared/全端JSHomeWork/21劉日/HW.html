@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            background-color: rgb(238, 241, 202);
+            border: 2px solid rgb(93, 154, 179);
+            width: 90px;
+            height: 40px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        fieldset {
+            width: 500px;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+            border: 1px solid rgb(223, 188, 124);
+        }
+
+        .st1 {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <form action="">
+        <fieldset>
+            <legend>表單</legend>
+            <div class="st1">
+                <label for="">姓名：</label>
+                <input type="text" id="idName">
+                <input type="button" value="Enter" onclick="EnterName()">
+                <span id="idsp1"></span>
+                </br><span>(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</span>
+            </div>
+            <div class="st1">
+                <label for="">密碼：</label>
+                <input type="password" id="idPwd">
+                <input type="button" value="Enter" onclick="EnterPwd()"><span id="idsp2"></span>
+                </br><span>(1.不可空白，2.至少6個字以上，3.包含大小寫字母、數字、特殊符號)</span>
+
+            </div>
+            <div class="st1">
+                <label for="">日期：</label>
+                <input type="date">
+            </div>
+        </fieldset>
+    </form> -->
+
+
+    <script>
+        function EnterName() {
+            let Name = document.getElementById("idName").value;
+            console.log(Name);
+            let span = document.getElementById("idsp1");
+            let NameLen = Name.length;
+            if (Name == "") {
+                span.innerHTML = "請輸入文字";
+            }
+            else if (NameLen < 2) {
+                span.innerHTML = "必須輸入兩個字以上";
+            } else {
+                span.innerHTML = "正確";
+            }
+        }
+        function EnterPwd() {
+            let Pwd = document.getElementById("idPwd").value;
+            let span = document.getElementById("idsp2");
+            let PwdLen = Pwd.length;
+
+            var reg = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@#!%*?&^])");
+            var res = reg.test(Pwd);
+
+            if (Pwd == "")
+                span.innerHTML = "密碼不可為空白";
+            else if (PwdLen < 6) {
+                span.innerHTML = "至少6個字以上";
+            }
+            else if (res !== true) {
+                span.innerHTML = "格式錯誤";
+            }
+            else {
+                span.innerHTML = "正確";
+            }
+
+            console.log("Is regular matches:", res);
+
+        }
+
+
+        document.write("<table>");
+        for (var i = 1; i <= 9; i++) {
+            document.write("<tr>");
+            for (var j = 1; j <= 9; j++) {
+                document.write(`<td>${i} x ${j} = ${i * j}</td>`);
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+        // for (i = 1; i < 10; i++) {
+        //     for (j = 1; j < 10; j++) {
+        //         // console.log(`${i}*${j}=${i * j}`)
+        //         idtd.innerHTML = `${i}*${j}`;
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

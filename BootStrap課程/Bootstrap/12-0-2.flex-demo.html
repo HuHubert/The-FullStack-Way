@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            background-color: #afa;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .menu {
+            width: 20%;
+            height: 200px;
+            background-color: #aff;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .content {
+            width: 80%;
+            height: 200px;
+            background-color: #faa;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .footer {
+            width: 100%;
+            height: 100px;
+            background-color: #ffa;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">header</div>
+        <div class="row">
+            <div class="menu">menu</div>
+            <div class="content">content</div>
+        </div>
+
+        <div class="footer">footer</div>
+    </div>
+</body>
+
+</html>

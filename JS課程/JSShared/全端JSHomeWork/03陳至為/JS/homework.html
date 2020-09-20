@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Homeworks</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <head>
+        <style>
+            table {
+                border: rgb(0, 162, 255) 4px solid;
+                border-collapse: collapse;
+                background-color: #aff;
+                color: blueviolet;
+            }
+
+            td {
+                border-left: rgb(0, 162, 255) 2px solid;
+                border-right: rgb(0, 162, 255) 2px solid;
+                padding: 5px;
+            }
+
+            span {
+                font-size: 15px;
+                color: #858383;
+                margin-top: -10px;
+            }
+
+            .formhr {
+                margin-top: 10px;
+                margin-bottom: 13px;
+            }
+
+            input {
+                width: 200px;
+                margin-bottom: 5px;
+            }
+
+            fieldset {
+                border-radius: 8px;
+                border: rgb(0, 162, 255) 2px solid;
+                width: 600px;
+                height: 350px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .starSet {
+                width: 40px;
+                margin: 5px;
+            }
+        </style>
+
+
+    </head>
+
+<body>
+
+    <div class="container">
+        <div id="table" style="margin-top: 20px; margin-bottom: 40px;"></div>
+        <hr>
+        <form style="margin-top: 20px; margin-bottom: 40px;">
+            <fieldset>
+                <legend class="w-auto p-1" style="font-size: 20px;">Form Check</legend>
+                <label for="name">姓名：</label><input type="text" id="name" name="name" placeholder="請輸入姓名"
+                    onblur="nameCheck()"><span id="name_problem"></span><br>
+                <span>(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</span>
+                <hr class="formhr">
+                <label for="password">密碼：</label><input type="password" id="password" name="password"
+                    placeholder="請輸入密碼" onblur="pwdCheck()"><span id="password_problem"></span><br>
+                <span>(1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊符號[!@#$%^&*])</span>
+                <hr class="formhr">
+                <label for="date">日期：</label><input type="text" id="date" name="date" placeholder="ex:2020/2/29"
+                    onblur="dateCheck()"><span id="date_problem"></span><br>
+                <span>(格式：西元年/月/日 yyyy/MM/dd)</span>
+                <hr class="formhr">
+                <div class="row justify-content-center">
+                    <button type="submit" class="btn btn-success m-1" onclick="return validCheck()">確認</button>
+                    <button type="reset" class="btn btn-danger m-1">清除</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <hr>
+
+        <div class="row">
+            <img src="../second/image/star_0.png" id="1star" onmousemove="starCount(this)" onclick="checkCount(this)"
+                class="starSet">
+            <img src="../second/image/star_0.png" id="2star" onmousemove="starCount(this)" onclick="checkCount(this)"
+                class="starSet">
+            <img src="../second/image/star_0.png" id="3star" onmousemove="starCount(this)" onclick="checkCount(this)"
+                class="starSet">
+            <img src="../second/image/star_0.png" id="4star" onmousemove="starCount(this)" onclick="checkCount(this)"
+                class="starSet">
+            <img src="../second/image/star_0.png" id="5star" onmousemove="starCount(this)" onclick="checkCount(this)"
+                class="starSet">
+        </div>
+        <div id="statText">打分中...0</div>
+        <hr>
+
+    </div>
+
+    <script>
+
+
+        function createTable() {
+            var tableAll = document.getElementById("table");
+            var tableSet = "";
+            var row = 10, col = 10, result = "";
+
+            tableSet += "<table>"
+            for (i = 1; i < row; i++) {
+                tableSet += "<tr>";
+                for (j = 1; j < col; j++) {
+                    tableSet += "<td>" + j + "*" + i + "=" + i * j + "</td>";
+                }
+                tableSet += "</tr>"
+            }
+            tableSet += "</table>"
+
+            tableAll.innerHTML = tableSet;
+        }
+        createTable()
+
+        const iconX = "<img src='../second/image/16picX.jpg' style='width: 20px;'>";
+        const iconO = "<img src='../second/image/16picO.jpg' style='width: 20px;'>";
+        var nameCheckPoint = 0;
+        var pwdCheckPoint = 0;
+        var dateCheckPoint = 0;
+
+        function nameCheck() {
+            var name = document.getElementById("name");
+            var nameSet = document.getElementById("name_problem");
+            var nameCheck = name.value;
+            var stringSplite = nameCheck.split("");
+
+            if (nameCheck == "") {
+                nameSet.innerHTML = iconX + "名稱不可為空白";
+                nameCheckPoint = 0;
+            }
+            else if (nameCheck.length < 2) {
+                nameSet.innerHTML = iconX + "請至少輸入兩個字以上";
+                nameCheckPoint = 0;
+            }
+            else {
+                nameSet.innerHTML = iconO + "資料正確";
+                nameCheckPoint = 1;
+                stringSplite.forEach(element => {
+                    console.log(element.charCodeAt());
+                    if (element.charCodeAt() <= 0x2121 || element.charCodeAt() >= 0xF9FE) {
+                        nameSet.innerHTML = iconX + "必須全部為中文字";
+                        nameCheckPoint = 0;
+                    }
+                });
+            }
+        }
+
+        function pwdCheck() {
+            var pwd = document.getElementById("password");
+            var pwdSet = document.getElementById("password_problem");
+            var pwdCheck = pwd.value;
+            var rexPassword = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+`\-={}\[\]:";'<>?,.\/]).{6,}$/;
+
+            if (pwdCheck == "") {
+                pwdSet.innerHTML = iconX + "密碼不可為空白";
+                pwdCheckPoint = 0
+            }
+            else if (!rexPassword.test(pwdCheck)) {
+                pwdSet.innerHTML = iconX + "至少6個字且必須包含以下需求";
+                pwdCheckPoint = 0
+            }
+            else {
+                pwdSet.innerHTML = iconO + "資料正確";
+                pwdCheckPoint = 1;
+            }
+        }
+
+        function dateCheck() {
+            var date = document.getElementById("date");
+            var dateSet = document.getElementById("date_problem");
+            var dateCheck = date.value;
+            var dateAlter = dateCheck.split('/');
+            var year = parseInt(dateAlter[0]);
+            var month = parseInt(dateAlter[1]);
+            var day = parseInt(dateAlter[2]);
+            let newDate1 = new Date();
+            let newDate2 = new Date();
+
+            if (dateAlter.length != 3)
+                dateSet.innerHTML = iconX + "日期不符合格式";
+            else {
+                newDate1 = new Date(year, month - 1, day);
+                newDate2 = new Date(dateCheck);
+            }
+
+            if (dateCheck == "") {
+                dateSet.innerHTML = iconX + "日期不可為空白";
+                dateCheckPoint = 0;
+            }
+            else if ((newDate1.getTime() != newDate2.getTime()) || dateAlter.length != 3) {
+                dateSet.innerHTML = iconX + "日期不符合格式";
+                dateCheckPoint = 0;
+            }
+            else {
+                dateSet.innerHTML = iconO + "資料正確";
+                dateCheckPoint = 1;
+            }
+
+        }
+
+
+        function validCheck() {
+            if (nameCheckPoint == 1 && pwdCheckPoint == 1 && dateCheckPoint == 1) {
+                return true;
+            }
+
+            return false;
+        }
+
+        var count;
+        function starCount(star) {
+            var text = document.getElementById("statText");
+            count = star.id[0];
+            var getStar = star.id.substring(1);
+
+            for (i = 0; i < 5; i++) {
+                if (i < count)
+                    document.getElementById((i + 1) + getStar).src = "../second/image/star_1.png";
+                else
+                    document.getElementById((i + 1) + getStar).src = "../second/image/star_0.png";
+            }
+            text.innerHTML = "打分中..." + count;
+        }
+
+        function checkCount(star) {
+            var getStar = star.id.substring(1);
+            var text = document.getElementById("statText");
+            text.innerHTML = "你給" + count + "顆星";
+            for (i = 0; i < 5; i++) {
+                document.getElementById((i + 1) + getStar).onmousemove = null;
+                document.getElementById((i + 1) + getStar).onclick = null;
+            }
+        }
+
+    </script>
+</body>
+
+
+</html>

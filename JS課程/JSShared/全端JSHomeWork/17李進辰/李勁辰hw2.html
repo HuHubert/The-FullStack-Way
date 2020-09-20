@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tex{
+            color: rgb(167, 161, 161);
+            font-size: 2px;
+        }
+        .st1 {
+            width: 450px;
+            border-bottom: 3px solid #F0F0F0;
+            margin: 20px;
+            padding-bottom: 10px;
+        }
+        fieldset{
+            width: 500px;
+        }
+        p{
+            font-size: 15px;
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="GET">
+        <fieldset>
+            <legend>check</legend>
+            <div class="st1" onmousemove="checkname()">
+                <label>姓名:</label> 
+                <input type="text" id="name1"  size="10" >
+                <span class="tex">輸入中文，至少兩字</span>
+                <p id="nasp" ></p>
+            </div>
+
+            <div class="st1" onmousemove="checkPasswd()">
+                <label>密碼:</label> 
+                <input type="password" id="password1"  maxlength="10" size="10" >
+                <span class="tex">密碼請輸入6-10個字元的英文字母加數字組合，但不含空白鍵、*、@、#、%或其他符號！</span>
+                <p id="idsp" ></p>
+            </div>
+            
+            <div class="st1" onmousemove="checkdate()">
+                <label>日期:</label> 
+                <input type="text" id="date1"   >
+                <span class="tex">格式:西元年/月/日 yyyy/mm/dd</span>
+                <p id="dasp" ></p>
+            </div>
+
+
+            <input type="button" value="checkPassword" onclick="checkPasswd();checkname();checkdate()" >
+            
+            
+        </fieldset>
+
+        <script>
+            
+            function checkname(){ 
+                let nass=document.getElementById("nasp");
+                var nach = document.getElementById("name1").value;
+                if(nach.match(/[^\u3447-\uFA29]/ig)){ 
+                    nass.style.color="crimson";
+                    nass.style.fontSize="15px";
+                    nass.innerHTML ="此欄位只能輸入中文!"; 
+                    
+                }
+                else if(nach=="" ||nach.length<2){
+                    nass.style.color="crimson";
+                    nass.style.fontSize="15px";
+                    nass.innerHTML ="輸入中文，至少兩字!"; 
+                }
+                else{
+                    nass.innerHTML="ok";
+                    nass.style.color="green";
+                    nass.style.fontSize="20px"
+                }
+            }
+            function checkPasswd()
+            {
+                let span=document.getElementById("idsp");
+                var Passwd = document.getElementById("password1").value;
+                
+                var aa=0;
+                var bb=0;
+                var cc=0;
+                var dd=0;
+                for(var i = 0 ; i < Passwd.length ; i++ )
+                {
+                    if(( Passwd.charAt(i)>= 'a' && Passwd.charAt(i) <= 'z' ))
+                    {
+                        aa++;
+                    }
+                else if(( Passwd.charAt(i)>= '0' && Passwd.charAt(i) <= '9' ))
+                {
+                    bb++;
+                }
+                else if(Passwd.charAt(i)>= 'A' && Passwd.charAt(i) <= 'Z')
+                {
+                    cc++;
+                }
+                else
+                {
+                    dd--;
+                }
+            }
+            if (Passwd.length < 6 || Passwd.length  >10) 
+                {
+                    span.innerHTML="密碼請輸入6-10個字元的大寫及小寫英文加數字組合！";
+                    span.style.color="crimson";
+                    span.style.fontSize="15px"
+                }
+            else if(parseInt(aa)+parseInt(bb)+parseInt(cc)>=6 && aa>0 && bb>0 && cc>0&&dd==0)
+            {
+                span.innerHTML="ok";
+                span.style.color="green";
+                span.style.fontSize="20px";
+                return true;
+            }
+            else if(dd!=0)
+            {
+                span.innerHTML="您的密碼只能是英文字母加數字組合，不能含空白鍵、*、@、#、%或其他符號 !";
+                span.style.color="crimson";
+                span.style.fontSize="15px";
+            return false;
+            document.getElementById("passwd").focus();
+            }
+
+            }
+            function checkdate(){
+                let dava = document.getElementById("date1").value;
+                var datext = document.getElementById("dasp");
+                var reg = new RegExp("^([0-9]{4})[./]{1}([0-9]{1,2})[./]{1}([0-9]{1,2})$");
+                var strDataValue;
+                var infoValidation = true;
+                var strDataValue = reg.exec(dava)
+                var d = new Date();
+                var theyear = d.getFullYear();
+                var themonth = d.getMonth() + 1;
+
+                if ((strDataValue = reg.exec(dava)) != null) 
+                {
+                    var i;
+                    i = parseFloat(strDataValue[1]);
+                    if (i <= 0 || i > theyear)
+                    { 
+                        infoValidation = false;
+                    }
+
+                    i = parseFloat(strDataValue[2]);
+                    if (i <= 0 || i > themonth) 
+                    { 
+                        infoValidation = false;
+                    }
+
+                    i = parseFloat(strDataValue[3]);
+                    if (strDataValue[2] == "01" || strDataValue[2] == "03" || strDataValue[2] == "05" || strDataValue[2] == "07" || strDataValue[2] == "08" || strDataValue[2] == "10" || strDataValue[2] == "12") {
+                        if (i > 0 && i <= 31) { 
+                            infoValidation = true;
+                        }
+                        else infoValidation = false;
+                    }
+
+                    if (strDataValue[2] == "04" || strDataValue[2] == "06" || strDataValue[2] == "9" || strDataValue[2] == "11") {
+           
+                        if (i > 0 && i <= 30) { 
+                            infoValidation = true;
+                        }
+                        else infoValidation = false;
+                    }
+                    if (strDataValue[2] == "02" ) 
+                    {
+                        if (i > 0 && i <= 28) { 
+                            infoValidation = true;
+                        }
+                        else infoValidation = false;}
+                }   
+                    if(dava==""){
+                        datext.innerHTML="請輸入日期！";
+                        datext.style.color="crimson";
+                        datext.style.fontSize="15px"
+                    } 
+                    else if (infoValidation == true) {
+                        datext.innerHTML="ok";
+                        datext.style.color="green";
+                        datext.style.fontSize="20px"
+                    }
+
+                    else {
+                        datext.innerHTML="格式錯誤！";
+                        datext.style.color="crimson";
+                        datext.style.fontSize="15px"
+                    }
+                         
+                
+                
+            }
+                
+                
+            
+        </script>
+        
+    </form>
+    
+</body>
+</html>

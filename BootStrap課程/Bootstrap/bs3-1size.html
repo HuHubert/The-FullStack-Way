@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .line {
+            height: 10px;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            margin: 80px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="w-25 p-3" style="background-color: #eee;">Width 25%</div>
+        <div class="w-50 p-3" style="background-color: #eee;">Width 50%</div>
+        <div class="w-75 p-3" style="background-color: #eee;">Width 75%</div>
+        <div class="w-100 p-3" style="background-color: #eee;">Width 100%</div>
+        <div class="w-auto p-3" style="background-color: #eee;">Width auto</div>
+
+
+        <div class="line"></div>
+
+        <div style="height: 100px; background-color: rgba(255,0,0,0.1);">
+            <div class="h-25 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 25%
+            </div>
+            <div class="h-50 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 50%
+            </div>
+            <div class="h-75 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 75%
+            </div>
+            <div class="h-100 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 100%
+            </div>
+            <div class="h-auto d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height auto
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <img src="https://fakeimg.pl/3000x900/" class="mw-100" alt="...">
+
+        <div class="line"></div>
+
+        <div style="height: 100px; background-color: rgba(255,0,0,0.1);">
+            <div class="mh-100" style="width: 100px; height: 3000px; background-color: rgba(0,0,255,0.1);">
+                Max-height
+                100%</div>
+        </div>
+
+
+        <div class="line"></div>
+
+
+        <div class="min-vw-100 autobg">Min-width 100vw</div>
+        <div class="min-vh-100 autobg">Min-height 100vh</div>
+        <div class="vw-100 autobg">Width 100vw</div>
+        <div class="vh-100 autobg">Height 100vh</div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max - 100) + 100);
+        }
+
+        function getRBGA() {
+            return `rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},1)`
+        }
+
+        const elements = document.querySelectorAll('.autobg');
+        Array.from(elements).forEach((element, index) => {
+            element.style.backgroundColor = getRBGA();
+        });
+
+    // $('.autobg').each(function (index, currentElement) {
+    //     currentElement.style.backgroundColor = getRBGA();
+    // });
+
+    </script>
+</body>
+
+</html>

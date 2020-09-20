@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02Mouseoverout.html</title>
+</head>
+
+<body>
+    <img id="img1" src="Images/star.gif" />
+    <img id="img2" src="Images/star.gif" />
+    <img id="img3" src="Images/star.gif" />
+    <img id="img4" src="Images/star.gif" />
+    <img id="img5" src="Images/star.gif" />
+    <br>
+    <label id="lab"></label>
+    <script>       
+        function ClickMouse() {
+            document.getElementById('img1').removeEventListener('mouseover', mouseover1);
+            document.getElementById('img1').removeEventListener('mouseout', mouseout1);
+            document.getElementById('img1').removeEventListener('click', mouseclick1);
+            document.getElementById('img2').removeEventListener('mouseover', mouseover2);
+            document.getElementById('img2').removeEventListener('mouseout', mouseout2);
+            document.getElementById('img2').removeEventListener('click', mouseclick2);
+            document.getElementById('img3').removeEventListener('mouseover', mouseover3);
+            document.getElementById('img3').removeEventListener('mouseout', mouseout3);
+            document.getElementById('img3').removeEventListener('click', mouseclick3);
+            document.getElementById('img4').removeEventListener('mouseover', mouseover4);
+            document.getElementById('img4').removeEventListener('mouseout', mouseout4);
+            document.getElementById('img4').removeEventListener('click', mouseclick4);
+            document.getElementById('img5').removeEventListener('mouseover', mouseover5);
+            document.getElementById('img5').removeEventListener('mouseout', mouseout5);
+            document.getElementById('img5').removeEventListener('click', mouseclick5);
+      }
+
+        document.getElementById('img1').addEventListener('click', mouseclick1);
+        function mouseclick1() {
+            document.querySelector("#lab").innerHTML = "你給1顆星";
+            ClickMouse();
+
+        }
+        document.getElementById('img2').addEventListener('click', mouseclick2);
+        function mouseclick2() {
+
+            document.querySelector("#lab").innerHTML = "你給2顆星";
+            ClickMouse();
+        }
+
+        document.getElementById('img3').addEventListener('click', mouseclick3);
+        function mouseclick3() {
+
+            document.querySelector("#lab").innerHTML = "你給3顆星";
+            ClickMouse();
+        }
+
+        document.getElementById('img4').addEventListener('click', mouseclick4);
+        function mouseclick4() {
+
+            document.querySelector("#lab").innerHTML = "你給4顆星";
+            ClickMouse();
+        }
+
+        document.getElementById('img5').addEventListener('click', mouseclick5);
+        function mouseclick5() {
+
+            document.querySelector("#lab").innerHTML = "你給5顆星";
+            ClickMouse();
+        }
+
+
+
+        document.getElementById('img1').addEventListener('mouseover', mouseover1);
+        document.getElementById('img1').addEventListener('mouseout', mouseout1);
+        document.getElementById('img2').addEventListener('mouseover', mouseover2);
+        document.getElementById('img2').addEventListener('mouseout', mouseout2);
+        document.getElementById('img3').addEventListener('mouseover', mouseover3);
+        document.getElementById('img3').addEventListener('mouseout', mouseout3);
+        document.getElementById('img4').addEventListener('mouseover', mouseover4);
+        document.getElementById('img4').addEventListener('mouseout', mouseout4);
+        document.getElementById('img5').addEventListener('mouseover', mouseover5);
+        document.getElementById('img5').addEventListener('mouseout', mouseout5);
+
+        function mouseover1() {
+            document.querySelector("#img1").src = "Images/chngstar.gif";
+            document.querySelector("#lab").innerHTML = "打分中...1";
+        }
+
+        function mouseout1() {
+            document.querySelector("#img1").src = "Images/star.gif";
+            document.querySelector("#lab").innerHTML = "";
+        }
+
+        function mouseover2() {
+            document.querySelector("#img1").src = "Images/chngstar.gif";
+            document.querySelector("#img2").src = "Images/chngstar.gif";
+            document.querySelector("#lab").innerHTML = "打分中...2";
+        }
+
+        function mouseout2() {
+            document.querySelector("#img1").src = "Images/star.gif";
+            document.querySelector("#img2").src = "Images/star.gif";
+            document.querySelector("#lab").innerHTML = "";
+        }
+
+        function mouseover3() {
+            document.querySelector("#img1").src = "Images/chngstar.gif";
+            document.querySelector("#img2").src = "Images/chngstar.gif";
+            document.querySelector("#img3").src = "Images/chngstar.gif";
+            document.querySelector("#lab").innerHTML = "打分中...3";
+
+        }
+
+        function mouseout3() {
+            document.querySelector("#img1").src = "Images/star.gif";
+            document.querySelector("#img2").src = "Images/star.gif";
+            document.querySelector("#img3").src = "Images/star.gif";
+            document.querySelector("#lab").innerHTML = "";
+        }
+
+        function mouseover4() {
+            document.querySelector("#img1").src = "Images/chngstar.gif";
+            document.querySelector("#img2").src = "Images/chngstar.gif";
+            document.querySelector("#img3").src = "Images/chngstar.gif";
+            document.querySelector("#img4").src = "Images/chngstar.gif";
+            document.querySelector("#lab").innerHTML = "打分中...4";
+        }
+
+        function mouseout4() {
+            document.querySelector("#img1").src = "Images/star.gif";
+            document.querySelector("#img2").src = "Images/star.gif";
+            document.querySelector("#img3").src = "Images/star.gif";
+            document.querySelector("#img4").src = "Images/star.gif";
+            document.querySelector("#lab").innerHTML = "";
+        }
+        function mouseover5() {
+            document.querySelector("#img1").src = "Images/chngstar.gif";
+            document.querySelector("#img2").src = "Images/chngstar.gif";
+            document.querySelector("#img3").src = "Images/chngstar.gif";
+            document.querySelector("#img4").src = "Images/chngstar.gif";
+            document.querySelector("#img5").src = "Images/chngstar.gif";
+            document.querySelector("#lab").innerHTML = "打分中...5";
+        }
+
+        function mouseout5() {
+            document.querySelector("#img1").src = "Images/star.gif";
+            document.querySelector("#img2").src = "Images/star.gif";
+            document.querySelector("#img3").src = "Images/star.gif";
+            document.querySelector("#img4").src = "Images/star.gif";
+            document.querySelector("#img5").src = "Images/star.gif";
+            document.querySelector("#lab").innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>

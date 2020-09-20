@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        fieldset {
+            width: 550px;
+            margin: 15px;
+            border: 3px solid darkcyan;
+            border-radius: 30px;
+            background-color: lavenderblush
+        }
+
+        .st1 {
+            border-bottom: 1px solid darkgrey;
+            margin: 30px;
+            padding-bottom: 3px;
+        }
+
+        p {
+            font-size: xx-small;
+            color: darkgrey;
+        }
+
+        .sub {
+            text-align: center;
+        }
+
+        .span1 {
+            font-size: xx-small;
+            color: red;
+        }
+
+        .span3 {
+            font-size: xx-small;
+            color: green;
+        }
+
+        .span4 {
+            font-size: xx-small;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>From Check</legend>
+            <div class="st1">
+                <label class="t1" for="account">姓名:</label>
+                <input type="text" id="account1" name="account" autocomplete="off" onblur="checkname()" autofocus
+                    placeholder="輸入姓名" size="10">
+                <span class="span1" id="idname"></span><br />
+                <p>(1.不可空白2.至少兩個字以上3.必須全部為中文字)</p>
+            </div>
+            <div class="st1">
+                <label class="t1" for="pwd1">密碼:</label>
+                <input type="password" id="pwd1" name="pwd" required maxlength="" autofocus placeholder="輸入密碼"
+                    onblur="checknumber()">
+                <span class="span1" id="idpwd"></span><br />
+                <p>(1.不可空白2.至少6個字以上且必須包含英文字母、數字、特殊字元[!@#$%^&*])</p>
+
+            </div>
+            <div class="st1">
+                <label for="" class="t1">生日:</label>
+                <input type="text" id="date1" name="birth" autofocus placeholder="ex:2000/2/29" onblur="checkdate()">
+                <span class="span1" id="iddate"></span><br />
+                <p>(格式:西元年/月/日yyyy/MM/dd)</p>
+
+            </div>
+        </fieldset>
+
+    </form>
+
+    <script>
+        function checkname() {
+            let name = document.getElementById("account1").value;
+            let spanname = document.getElementById("idname");
+            let stringobj = new String(name);
+
+            if (stringobj == "") {
+                spanname.innerHTML = "姓名欄位不可空白!";
+                spanname.classList.remove("span3")
+                
+            }
+            else if (stringobj.length < 2) {
+                spanname.innerHTML = "需兩個字以上!";
+                spanname.classList.remove("span3")
+            }
+            else if (stringobj.length >= 2) {
+                for (let i = 0; i < stringobj.length; i++) {
+                    let ch = stringobj.charCodeAt(i);
+                    if (ch >= 0x4e00 && ch <= 0x9fff) {
+                        spanname.innerHTML =  "正確!" 
+                        spanname.classList.add("span3");
+                    }
+                    else {
+                        spanname.innerHTML = "必須皆為中文字!";
+                        spanname.classList.remove("span3")
+                    }
+                }
+            }
+        }
+        function checknumber() {
+            let password = document.getElementById("pwd1").value;
+            let spanpwd = document.getElementById("idpwd");
+            let numObj = new String(password);
+            let flag1 = false, flag2 = false, flag3 = false;
+
+            if (numObj == "") {
+                spanpwd.innerHTML = "密碼不可空白!";
+                spanpwd.classList.remove("span3");
+            }
+            else if (numObj.length >= "6") {
+                for (let k = 0; k < numObj.length; k++) {
+                    let str = numObj.charAt(k).toUpperCase();
+                    if (str >= "A" && str <= "Z") {
+                        flag1 = true;
+                    }
+                    else if (str >= "0" && str <= "9") {
+                        flag2 = true;
+                    }
+                    else if (str == "!" || str == "@" || str == "#" || str == "%" || str == "^" || str == "&" || str == "*") {
+                        flag3 = true;
+                    }
+                    if (flag1 && flag2 && flag3)
+                        break;
+                }
+                if (flag1 && flag2 && flag3) {
+                    spanpwd.innerHTML = "正確!";
+                    spanpwd.classList.add("span3");
+                }
+                else {
+                    spanpwd.innerHTML = "格式錯誤!";
+                    spanpwd.classList.remove("span3");
+                }
+            }
+            else {
+                spanpwd.innerHTML = "密碼長度需大於6個字數!";
+                spanpwd.classList.remove("span3");
+            }
+        }
+        function checkdate() {
+            let day = document.getElementById("date1").value;
+            let spandate = document.getElementById("iddate");
+            let datobj = String(day);
+            let d = new Date(day);
+            console.log(d)
+
+            if (datobj == "") {
+                spandate.innerHTML = "日期不可以空白!";
+                spandate.classList.remove("span3");
+            }
+
+            if (datobj.length > 10 || datobj.length<10) {
+                spandate.innerHTML = "日期格式不對!";
+                spandate.classList.remove("span3");
+            }
+            else if (d.getMonth() < 12 && d.getMonth() >= 0) 
+            {
+                if (31 >= d.getDate() && d.getDate()>= 1) 
+                {
+                    spandate.innerHTML = "正確!";
+                    spandate.classList.add("span3")
+                }
+                else
+                {
+                spandate.innerHTML = "日期格式不對!";
+                spandate.classList.remove("span3");
+                }
+            }
+            else{
+                spandate.innerHTML = "日期格式不對!";
+                spandate.classList.remove("span3");
+            }
+
+
+
+
+
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

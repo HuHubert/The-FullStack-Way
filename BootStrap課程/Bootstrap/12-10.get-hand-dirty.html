@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 960px;
+            margin: 40px auto;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .nav-left,
+        .logo,
+        .social-icons {
+            width: 33%;
+        }
+
+        .logo {
+            margin: 0 auto;
+            background-color: #ccc;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .social {
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            margin: 5px;
+        }
+
+        .items {
+            padding: 20px 0;
+        }
+
+        .sub-title {
+            margin: 100px auto;
+            width: 300px;
+            font-weight: bold;
+        }
+
+        .demo {
+            margin: 80px 0;
+        }
+
+        .order-1 {
+            order: 1;
+        }
+
+        .order-2 {
+            order: 2;
+        }
+
+        .link-row a {
+            margin: 20px auto;
+            text-decoration: underline;
+            font-size: 2rem;
+            color: #ccc;
+
+        }
+
+        .f-social-icons {
+            justify-content: center;
+        }
+
+        .f-signup {
+            text-align: center;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .fixed-button {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            background-color: #000;
+            color: white;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="nav-left">
+                    <a href="#">Shop</a>
+                    <a href="#">Lookbook</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+
+                <div class="logo">Alameda</div>
+
+                <div class="social-icons">
+                    <div class="social"></div>
+                    <div class="social"></div>
+                    <div class="social"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <h2>New In</h2>
+                <button>Shop Now</button>
+            </div>
+            <div class="row items-row">
+                <div class="items">
+                    <img src="https://fakeimg.pl/300/" alt="">
+                    <span>Linen Top / Blue</span>
+                </div>
+                <div class="items">
+                    <img src="https://fakeimg.pl/300/" alt="">
+                    <span>Linen Top / Blue</span>
+                </div>
+                <div class="items">
+                    <img src="https://fakeimg.pl/300/" alt="">
+                    <span>Linen Top / Blue</span>
+                </div>
+
+
+            </div>
+
+            <div class="row sub-title">
+                <span>Made with love in Los Angeles from all natural eco-friendly materials.</span>
+            </div>
+
+
+            <div class="row demo">
+                <div class="demo-left">
+                    <img src="https://fakeimg.pl/300/" alt="">
+                    <p>Lisa Shirt</p>
+                    <p>$50.00</p>
+                </div>
+                <div class="demo-right">
+                    <img src="https://fakeimg.pl/500x700/" alt="">
+                </div>
+            </div>
+
+            <div class="row demo">
+                <div class="demo-left order-2">
+                    <img src="https://fakeimg.pl/300/" alt="">
+                    <p>Lisa Shirt</p>
+                    <p>$50.00</p>
+                </div>
+                <div class="demo-right order-1">
+                    <img src="https://fakeimg.pl/500x700/" alt="">
+                </div>
+            </div>
+
+            <div class="row link-row">
+                <a href="#">View Lookbook</a>
+            </div>
+
+            <div class="row">
+                <img src="https://fakeimg.pl/660x700/afaafa" alt="">
+                <img src="https://fakeimg.pl/300x700/faffaf" alt="">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="social"></div>
+                <div class="social"></div>
+            </div>
+
+            <div class="f-signup">
+                <p>Sign up to receive news and updates.</p>
+                <div class="row justify-content-center">
+                    <input type="text" placeholder="Email Address">
+                    <button>Sign up</button>
+                </div>
+                <p>Made with Squarespace</p>
+            </div>
+        </div>
+    </footer>
+    <button class="fixed-button">Hi there</button>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Homework02</title>
+    <style>
+        .container {
+            width: 640px;
+            margin: 20px auto;
+        }
+
+        .field {
+            width: 600px;
+            border-radius: 5px;
+            border: 2px dashed orange;
+        }
+
+        .btn {
+            margin: 5px;
+            margin-left: 220px;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="container" action="#">
+        <fieldset class="field">
+            <legend>Check</legend>
+            <div class="stName">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="Name" placeholder="請輸入姓名" minlength="2" onblur="check()">
+                <span id="sname"></span><br>
+                <p>1.不可空白，2.至少兩個字以上，3.必須全部為中文字</p>
+            </div>
+            <div class="stPWD">
+                <label for="pwd">密碼：</label>
+                <input type="password" id="pwd" name="Password" placeholder="請輸入密碼" minlength="6" maxlength="12"
+                    onblur="check()">
+                <span id="spwd"></span><br>
+                <p>1.不可空白，2.至少6個字，最多12個字，3.必須包含大小寫字母、數字</p>
+            </div>
+            <div class="stBir">
+                <label for="bir">生日：</label>
+                <input type="date" id="bir" name="Bir">
+                <span id="sbir"></span><br>
+                <p>格式：西元年/月/日 yyyy/MM/dd</p>
+            </div>
+            <div class="btn">
+                <input type="button" value="Check" onclick="check()">
+                <input type="reset" value="Clear">
+            </div>
+        </fieldset>
+        <script>
+            function check() {
+                let Namevalue = document.getElementById("name").value;
+                let spname = document.getElementById("sname");
+
+                if (Namevalue == "") {
+                    spname.innerHTML = "必填"
+                    spname.style.color = "red";
+                }
+                else if (Namevalue.length < 2) {
+                    spname.innerHTML = "姓名長度過短"
+                    spname.style.color = "red";
+                }
+                else if (Namevalue == /[^\u4e00-\u9fa5]/) {
+                    spname.innerHTML = "格式錯誤";
+                    spname.style.color = "red";
+                }
+                else {
+                    spname.innerHTML = "正確";
+                    spname.style.color = "green";
+                }
+
+                let Pwdvalue = document.getElementById("pwd").value;
+                let sppwd = document.getElementById("spwd");
+                let flag1 = false, flag2 = false;
+
+                if (Pwdvalue == "") {
+                    sppwd.innerHTML = "必填";
+                    sppwd.style.color = "red";
+                }
+                else if (Pwdvalue.length >= 6) {
+                    for (let i = 0; i < Pwdvalue.length; i++) {
+                        let ch = Pwdvalue.charAt(i).toUpperCase();
+                        if (ch >= "A" && ch <= "Z") {
+                            flag1 = true;
+                        }
+                        else if (ch >= "0" && ch <= "9") {
+                            flag2 = true;
+                        }
+                        if (flag1 && flag2) {
+                            break;
+                        }
+                    }
+                    if (flag1 && flag2) {
+                        sppwd.innerHTML = "正確";
+                        sppwd.style.color = "green";
+                    }
+                    else {
+                        sppwd.innerHTML = "格式錯誤";
+                        sppwd.style.color = "red";
+                    }
+                }
+                else if (Pwdvalue.length < 6 || Pwdvalue.length > 12) {
+                    sppwd.innerHTML = "密碼長度錯誤"
+                    sppwd.style.color = "red";
+                }
+                else {
+                    sppwd.innerHTML = "正確";
+                    sppwd.style.color = "green";
+                }
+            }
+        </script>
+    </form>
+</body>
+
+</html>

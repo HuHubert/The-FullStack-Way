@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .line {
+            height: 10px;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            margin: 80px 0;
+        }
+
+        .truncate-sample {
+            font-size: 21px;
+            font-weight: 700;
+            /* width: calc(100% - 80px); */
+            margin-bottom: 1px;
+            width: 20vw;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <div class="container">
+        <p class="h1">h1. Bootstrap heading</p>
+        <p class="h2">h2. Bootstrap heading</p>
+        <p class="h3">h3. Bootstrap heading</p>
+        <p class="h4">h4. Bootstrap heading</p>
+        <p class="h5">h5. Bootstrap heading</p>
+        <p class="h6">h6. Bootstrap heading</p>
+
+        <div class="line"></div>
+        <h3>
+            Fancy display heading
+            <small class="text-muted">With faded secondary text</small>
+        </h3>
+
+        <div class="line"></div>
+        <h1 class="display-1">Display 1</h1>
+        <h1 class="display-2">Display 2</h1>
+        <h1 class="display-3">Display 3</h1>
+        <h1 class="display-4">Display 4</h1>
+
+        <div class="line"></div>
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur esse sit laborum, neque quas labore
+            repellat cum reprehenderit, facilis quo accusamus perferendis doloribus saepe mollitia? Dicta a corporis
+            fugiat sed!</p>
+
+        <p class="lead">
+            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+        </p>
+
+        <p class="h5" style="font-weight: 300;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur esse
+            sit laborum, neque quas
+            labore
+            repellat cum reprehenderit, facilis quo accusamus perferendis doloribus saepe mollitia? Dicta a corporis
+            fugiat sed!</p>
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur esse sit laborum, neque quas labore
+            repellat cum reprehenderit, facilis quo accusamus perferendis doloribus saepe mollitia? Dicta a corporis
+            fugiat sed!</p>
+
+
+        <div class="line"></div>
+
+        <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+        <p><del>This line of text is meant to be treated as deleted text.</del></p>
+        <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+        <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+        <p><u>This line of text will render as underlined</u></p>
+        <p><small>This line of text is meant to be treated as fine print.</small></p>
+        <p><strong>This line rendered as bold text.</strong></p>
+        <p><em>This line rendered as italicized text.</em></p>
+
+        <div class="line"></div>
+        <div class="truncate-sample">
+            <a href="https://news.5gee.org/c16148.html">
+                <h4 class=" text-truncate">8月稅前盈餘年減18.43%　看好第四季旺季回升</h4>
+                <span>09-17 11:20</span>
+                <p class=" text-truncate">8月稅前盈餘年減18.43%　看好第四季旺季回升詳全文：8月稅前盈餘年減18.43%　看好第四季旺季回升</p>
+            </a>
+        </div>
+
+        <div class="line"></div>
+
+        <p class="text-primary">.text-primary</p>
+        <p class="text-secondary">.text-secondary</p>
+        <p class="text-success">.text-success</p>
+        <p class="text-danger">.text-danger</p>
+        <p class="text-warning">.text-warning</p>
+        <p class="text-info">.text-info</p>
+        <p class="text-light bg-dark">.text-light</p>
+        <p class="text-dark">.text-dark</p>
+        <p class="text-body">.text-body</p>
+        <p class="text-muted">.text-muted</p>
+        <p class="text-white bg-dark">.text-white</p>
+        <p class="text-black-50">.text-black-50</p>
+        <p class="text-white-50 bg-dark">.text-white-50</p>
+
+        <div class="line"></div>
+
+        <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+        <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+        <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+        <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+        <div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
+        <div class="p-3 mb-2 bg-info text-white">.bg-info</div>
+        <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+        <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+        <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+        <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
+    </div>
+
+
+    <footer></footer>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

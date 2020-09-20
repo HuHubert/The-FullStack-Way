@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS九九乘法表</title>
+    <style>
+        table{
+            background-color: rgb(179, 179, 243);
+            padding: 20px;
+            border: 3px black solid;
+            border-collapse: collapse;
+            
+        }
+        td{
+            border: 1px solid rgb(128, 45, 167);
+            padding: 10px;
+            background-color: coral;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h2>
+            <font color="#FF0000">九九乘法表</font>
+        </h2>
+        <hr>
+        <table>
+            <script>
+                var i, j;
+                document.write("<tr><td></td>");
+                for (i = 1; i <= 9; i++)
+                    document.write("<td><b>" + i + "</b></td>");
+                document.write("<tr>");
+                for (i = 1; i <= 9; i++) {
+                    document.write("<tr>");
+                    document.write("<td><b>" + i + "</b></td>");
+                    j = 1;
+                    while (j <= 9) {
+                        document.write("<td>");
+                        document.write(+i + "*" + j + "=" + i * j);
+                        document.write("</td>");
+                        j++;
+                    }
+                    document.write("<tr>");
+                }
+            </script>
+        </table>
+    </center>
+</body>
+
+</html>

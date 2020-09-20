@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border: 5px solid rgb(90, 90, 90);
+            background-color: lightgreen;
+        }
+        td{
+            border-left: 2px solid rgb(63, 8, 190);
+            border-right: 2px solid rgb(63, 8, 190);
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <script>
+            for (j = 1; j <= 9; j++) {
+                document.write("<tr>");
+                for (i = 2; i <= 9; i++) {
+                    sum = i * j;
+                    document.write("<td>" + i + "*" + j + "=" + sum + "</td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+</body>
+
+</html>

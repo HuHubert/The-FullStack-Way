@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <style>
+        img:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="Images/star.gif" />
+        <img src="Images/star.gif" />
+        <img src="Images/star.gif" />
+        <img src="Images/star.gif" />
+        <img src="Images/star.gif" />
+        <br><span></span>
+    </div>
+</body>
+<script type="text/javascript">
+    $('img').each(function (index) {
+        var star = 'Images/star.gif';
+        var starRed = 'Images/chngstar.gif';
+        var prompt = ["評分中...."];
+        var prompt_1 = ['一星評價','二星評價','三星評價','四星評價','五星評價'];
+        
+        this.id = index;		
+        $(this).on("mouseover", function () {	
+            $('img').attr('src', star);
+            $(this).attr('src', starRed);		
+            $(this).prevAll().attr('src', starRed);	
+            $(this).siblings('span').text(prompt);		
+            
+        });
+        
+        $(this).on("click", function () {
+            $(this).siblings('span').text(prompt_1[this.id]);
+        });
+    });
+</script>
+
+</html>

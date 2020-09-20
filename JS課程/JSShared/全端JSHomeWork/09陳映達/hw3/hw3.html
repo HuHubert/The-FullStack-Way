@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02Mouseoverout.html</title>
+</head>
+
+<body>
+
+    <div id="divimg" style="margin: 0 auto; padding:40px; border: 2px solid green; width: 700px;">
+        <h2 style="text-align: center;">評分系統</h2>
+        <img id="idimg" name="1" src="Images/star.gif" />
+        <img id="idimg" name="2" src="Images/star.gif" />
+        <img id="idimg" name="3" src="Images/star.gif" />
+        <img id="idimg" name="4" src="Images/star.gif" />
+        <img id="idimg" name="5" src="Images/star.gif" />
+        <br>
+        <div style="text-align: center; padding:40px; font-size: 20px; font-family: Arial, Helvetica, sans-serif;">
+            <span id="score" ></span>
+        </div>
+    </div>
+    
+
+
+    <script>
+        //window.onload = function () {
+        //獲取所有img"
+        var imgstars = document.querySelectorAll("img");
+        var scoretext = document.getElementById("score");
+        var temp = 0;
+        var click = false;
+        console.log(imgstars);
+        //為每個img註冊一個onmouseover事件
+        for (var i = 0; i < imgstars.length; i++) {
+            //鼠標懸浮事件
+            imgstars[i].onmouseover = function () {
+          //設置從第0個開始到當前鼠標移動到img位置為實心五角星
+                for (var c = 0; c <imgstars.length; c++) {
+                    
+                    imgstars[c].src = "Images/chngstar.gif";
+                    //到滑鼠指定的點之後 不要在繼續往下做了
+                    if (imgstars[c] == this) {
+                        temp = c + 1;
+                        break;
+                    }
+                }
+                
+                for (var j=temp; j<imgstars.length;j++)
+                {
+                    
+                    imgstars[j].src = "Images/star.gif";
+                }
+                scoretext.innerHTML = "評分中" + temp + "顆星";
+
+                
+            };
+
+            imgstars[i].onclick = function(){
+                    if (temp < imgstars.length) {
+                        scoretext.innerHTML = "您此次的評分是" +temp + "顆星";
+                    }
+                    else {
+                     scoretext.innerHTML = "您此次的評分是滿分5顆星";
+                    }
+                } 
+
+       
+       }
+
+
+
+
+    </script>
+</body>
+
+</html>

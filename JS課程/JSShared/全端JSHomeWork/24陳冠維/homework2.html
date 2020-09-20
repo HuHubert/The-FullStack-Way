@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Username">
+    <span id="namecheck"></span>
+    <hr>
+    <label for="pwd">Password:</label>
+    <input type="password" id="pwd" placeholder="Password">
+    <span id="pwdcheck"></span>
+    <hr>
+    <label for="date">Date:</label>
+    <input type="date" id="date">
+    <span id="datecheck"></span>
+    <hr>
+    <input type="button" value="send" onclick="check()">
+    <input type="button" value="clear" onclick="cleartxt()">
+    <script>
+
+        function check() {
+            var nameValue = document.getElementById("name").value;
+            var pwdValue = document.getElementById("pwd").value;
+            var nameCheck = document.getElementById("namecheck");
+            var pwdCheck = document.getElementById("pwdcheck");
+            var dateValue = document.getElementById("date").value;
+            var dateCheck = document.getElementById("datecheck");
+
+            if(dateValue == ""){
+                dateCheck.innerHTML = "Please select date"
+            }else{
+                dateCheck.innerHTML = "";
+            }
+            
+            if(nameValue == ""){
+                nameCheck.innerHTML = "Please fill name";
+            }else if (checkblank(nameValue)) {
+                nameCheck.innerHTML = "contain blank";
+            } else if (nameValue.length < 2) {
+                nameCheck.innerHTML = "shorter than 2";
+            } else if (isPureChinese(nameValue)) {
+                nameCheck.innerHTML = "Not chinese";
+            } else {
+                nameCheck.innerHTML = "success";
+            }
+            if(pwdValue == ""){
+                pwdCheck.innerHTML = "Please fill password"
+            } else if (checkblank(pwdValue)) {
+                pwdCheck.innerHTML = "Contain blank";
+            } else if (pwdValue.length < 6) {
+                pwdCheck.innerHTML = "password too short";
+            } else if (pwdCheckContent(pwdValue)) {
+                pwdCheck.innerHTML = "format is incorrect"
+            }else{
+                pwdCheck.innerHTML = "success";
+            }
+        }
+        function isPureChinese(input) {
+            var reg = /^[\u4E00-\u9FA5]+$/
+            if (reg.test(input)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function checkblank(Value) {
+            for (let i = 0; i < Value.length; i++) {
+                if (Value.charAt(i) == " ") {
+                    return true;
+                }
+                else {
+                    continue;
+                }
+            }
+        }
+        function pwdCheckContent(Value) {
+            var pwdValue = document.getElementById("pwd").value;
+            var english = false,num = false,sign = false;
+            for (let i = 0; i < pwdValue.length; i++) {
+                let pwdChr =  pwdValue.charAt(i).toUpperCase();
+                if(pwdChr>="A"&&pwdChr<="Z"){
+                    english = true;
+                }else if(pwdChr>="0"&&pwdChr<="9"){
+                    num = true;
+                }else if(checkSpecialSign(pwdChr)){
+                    sign = true;
+                }
+                if(english&&num&&sign){
+                    break;
+                }
+            }    
+                if(english && num && sign){
+                    return false;
+                }else{
+                    return true;
+                }
+            
+        }
+        function checkSpecialSign(Value){
+            var reg = /^[!@#$%^&*]+$/
+            if (reg.test(Value)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function cleartxt(){
+            document.getElementById("name").value = "";
+            document.getElementById("pwd").value = "";
+        }
+    </script>
+</body>
+
+</html>

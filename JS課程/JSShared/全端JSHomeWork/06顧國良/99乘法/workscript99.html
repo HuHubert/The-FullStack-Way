@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work99</title>
+</head>
+
+<body>
+    <table class="tab" style="background-color: aqua; border: 1px solid red ;border-collapse: collapse;">
+
+
+        <script>
+            var i, j;
+            for (i = 2; i <= 9; i++) {
+                document.write("<tr >");
+                for (j = 1; j <= 9; j++) {
+                    sum = i * j;
+                    document.write("<td style='border-right: 1px solid blue;'>" + j + " x " + i + " = " + sum + "</td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>    
+
+
+</body>
+
+</html>

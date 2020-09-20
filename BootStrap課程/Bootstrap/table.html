@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .line {
+            height: 10px;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            margin: 80px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row mb-3">
+            <button onclick="showData()">Show Table Data</button>
+            <button onclick="changeStyle()">Change Table style</button>
+        </div>
+
+
+        <div class="row">
+
+            <table id='myTable' class="table" width='960' height='500'>
+                <tr id="myTr"></tr>
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+        let data = [
+            { type: "Name", content: "John Doe" },
+            { type: "Birthdate", content: "01/01/1970" },
+            { type: "Salary", content: "$40,000,000" },
+            { type: "Favorite Flavour", content: "Sour" }
+        ];
+
+        function addCurrentRow(td1, td2) {
+            console.log('td1', td1)
+            console.log('td2', td2)
+            let tdText1 = $('<td>').text(td1);
+            let tdText2 = $('<td>').text(td2);
+            let tr = $('<tr>').append(tdText1, tdText2);
+            $('table').append(tr);
+        }
+
+        function showData() {
+            for (let i = 0; i < data.length; ++i) {
+
+                addCurrentRow(data[i].type, data[i].content)
+            }
+        }
+
+        let tableArray = ['table table-striped', 'table table-striped table-dark', 'table table-bordered']
+        let tableIndex = 0;
+        function changeStyle() {
+            $('#myTable').attr('class', tableArray[tableIndex]);
+            tableIndex++;
+            if (tableIndex > 2) tableIndex = 0;
+        }
+
+
+    </script>
+</body>
+
+</html>

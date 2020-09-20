@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+
+    <style>
+        .container {
+            background-color: rgb(240, 213, 222);
+            width: 800px;
+            height: 430px;
+            padding: 10px;
+
+            display: grid;
+            grid-template-columns: 240px auto;
+            grid-template-rows: 100px 200px 1fr;
+            gap: 5px 5px;
+
+            Grid-template-areas:
+                "header header "
+                "menu content"
+                "footer footer ";
+
+        }
+
+        .autobg {
+            /* width: 100%; */
+            /* height: 100px; */
+            background-color: #ccc;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #aff;
+        }
+
+        .menu {
+            grid-area: menu;
+            background-color: #afa;
+            min-height: 200px;
+        }
+
+        .content {
+            grid-area: content;
+            background-color: #faa;
+            min-height: 200px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="autobg header">header</div>
+        <div class="autobg menu">menu</div>
+        <div class="autobg content">content</div>
+        <div class="autobg footer">footer</div>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max - 50) + 100);
+        }
+
+        function getRBGA() {
+            return `rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},1)`
+        }
+
+        const elements = document.querySelectorAll('.autobg');
+
+        Array.from(elements).forEach((element, index) => {
+            element.style.backgroundColor = getRBGA();
+        });
+
+    // $('.autobg').each(function (index, currentElement) {
+    //     currentElement.style.backgroundColor = getRBGA();
+    // });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+.warp {
+    margin: 50px auto;
+    width: 1200px;
+}
+
+table {
+    border: 2px solid #813772;
+    width: 720px;
+    margin: 0px auto;
+    background-color: #CAEBF2;
+}
+
+td {
+    text-align: left;
+    width: 80px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 1px solid #813772;
+    border-right: 1px solid #813772;
+    font-size: 18px;
+}
+h1 {
+    text-align: center;
+}
+
+.hwTitle {
+    text-align: center;
+}
+
+.hw1 {
+    display: flex;
+    flex-direction: column;
+}
+
+

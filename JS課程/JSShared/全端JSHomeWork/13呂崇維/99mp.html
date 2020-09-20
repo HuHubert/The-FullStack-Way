@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99mp</title>
+    <style>
+        table {
+            border: 3px solid#009FCC;
+            border-collapse: collapse;
+            background-color: #cceeff;
+            color: red;
+        }
+
+        td {
+            padding-left: 8px;
+            width: 55px;
+            border: 2px solid#009FCC;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        document.write("<table>")
+        var i = 2
+        while (i <= 9) 
+        {
+            document.write("<td>")
+            var j = 1;
+            while (j <= 9) 
+            {
+                k = i * j;
+                document.write(i + "x" + j + "=" + k + "<br>");
+                j++;
+            }
+            document.write("</td>")
+            i++;
+        }
+        document.write(" </table>")
+    </script>
+
+
+</body>
+
+</html>

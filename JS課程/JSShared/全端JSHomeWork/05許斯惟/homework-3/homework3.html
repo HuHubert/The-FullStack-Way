@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02Mouseoverout.html</title>
+    <style>
+        *{
+            font-family: 微軟正黑體;            
+        }
+        body{
+            background-color: lemonchiffon;
+        }
+        .st1{
+            border: 2px solid cadetblue;
+            background-color: lightblue;
+            width: 800px;
+            height: 250px;
+            margin:200px auto;
+            text-align:center;
+            padding: 20px;           
+        }
+        .p1{    
+            margin-top: 35px;
+            color:darkred;
+        }
+        .p2{
+            color:darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container ">
+        <div class="st1">
+            <img id="idimg" src="Images/star.gif"  onclick="click1()"/>
+            <img id="idimg2" src="Images/star.gif" onclick="click2()"/>
+            <img id="idimg3" src="Images/star.gif" onclick="click3()"/>
+            <img id="idimg4" src="Images/star.gif" onclick="click4()"/>
+            <img id="idimg5" src="Images/star.gif" onclick="click5()"/>
+            <h2 class="p1" id="idh2">評分中...</h2>
+            <br>
+            <h1 class="p2" id="idh1"></h1>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector("#idimg").onmouseover = mouseover1;        
+        document.querySelector("#idimg").onmouseout = mouseout1;
+
+        document.querySelector("#idimg2").onmouseover = mouseover2;
+        document.querySelector("#idimg2").onmouseout = mouseout2;
+
+        document.querySelector("#idimg3").onmouseover = mouseover3;
+        document.querySelector("#idimg3").onmouseout = mouseout3;
+
+        document.querySelector("#idimg4").onmouseover = mouseover4;
+        document.querySelector("#idimg4").onmouseout = mouseout4;
+
+        document.querySelector("#idimg5").onmouseover = mouseover5;
+        document.querySelector("#idimg5").onmouseout = mouseout5;
+
+        function mouseover1() {
+            document.querySelector("#idimg").src = "Images/chngstar.gif";
+            let vlaue =document.getElementById("idh2");
+            vlaue.innerHTML="評價1顆星 不給高一點分嗎?"
+        }
+        function mouseout1() {
+            document.querySelector("#idimg").src = "Images/star.gif";
+            let vlaue =document.getElementById("idh2");
+            vlaue.innerHTML="評分中..."
+        }
+
+        function mouseover2() {
+            mouseover1()
+            document.querySelector("#idimg2").src = "Images/chngstar.gif";
+            let vlaue =document.getElementById("idh2");
+            vlaue.innerHTML="評價2顆星 還可以更高嗎?"
+        }
+        function mouseout2() {
+            mouseout1()
+            document.querySelector("#idimg2").src = "Images/star.gif";
+            let vlaue =document.getElementById("idh2");
+            vlaue.innerHTML="評分中..."
+        }
+
+
+        function mouseover3() {
+            mouseover1()
+            mouseover2()
+            document.querySelector("#idimg3").src = "Images/chngstar.gif";
+            let vlaue =document.getElementById("idh2");
+            vlaue.innerHTML="評價3顆星 再來再來!!"
+        }
+        function mouseout3() {
+            mouseout1()
+            mouseout2()
+            document.querySelector("#idimg3").src = "Images/star.gif";
+            let vlaue =document.getElementById("idh2");
+            vlaue.innerHTML="評分中..."
+        }
+
+        function mouseover4() {
+            mouseover1()
+            mouseover2()
+            mouseover3()
+            document.querySelector("#idimg4").src = "Images/chngstar.gif";
+            let vlaue =document.getElementById("idh2");
+            vlaue.innerHTML="評價4顆星 快快快!!"
+        }
+        function mouseout4() {
+            mouseout1()
+            mouseout2()
+            mouseout3()
+            document.querySelector("#idimg4").src = "Images/star.gif";
+            let vlaue =document.getElementById("idh2");
+            vlaue.innerHTML="評分中..."
+        }
+
+        function mouseover5() {
+            mouseover1()
+            mouseover2()
+            mouseover3()
+            mouseover4()
+            document.querySelector("#idimg5").src = "Images/chngstar.gif";
+            let vlaue =document.getElementById("idh2");
+            vlaue.innerHTML="評價5顆星 點擊下去吧! 非常感謝你"
+        }
+        function mouseout5() {
+            mouseout1()
+            mouseout2()
+            mouseout3()
+            mouseout4()
+            document.querySelector("#idimg5").src = "Images/star.gif";
+            let vlaue =document.getElementById("idh2");
+            vlaue.innerHTML="評分中..."
+        }
+
+        // function click1(){
+        //     document.querySelector("#idimg").src = "Images/chngstar.gif";
+        //     let vlaue =document.getElementById("idh2");
+        //     vlaue.innerHTML="評價1顆星";
+        //     let vlaue2 =document.getElementById("idh1");
+        //     vlaue2.innerHTML="最後評為1顆星";
+            
+                                
+        // }
+
+
+    </script>
+</body>
+
+</html>

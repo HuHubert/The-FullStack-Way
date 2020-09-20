@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .line {
+            height: 10px;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            margin: 80px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+
+        <button type="button" class="btn btn-link">Link</button>
+
+    </div>
+
+
+    <div class="line"></div>
+
+
+    <div class="container">
+        <a class="btn btn-primary" href="#" role="button">Link</a>
+        <button class="btn btn-primary" type="submit">Button</button>
+        <input class="btn btn-primary" type="button" value="Input">
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <input class="btn btn-primary" type="reset" value="Reset">
+    </div>
+
+
+    <div class="line"></div>
+
+    <div class="container">
+        <button type="button" class="btn btn-outline-primary">Primary</button>
+        <button type="button" class="btn btn-outline-secondary">Secondary</button>
+        <button type="button" class="btn btn-outline-success">Success</button>
+        <button type="button" class="btn btn-outline-danger">Danger</button>
+        <button type="button" class="btn btn-outline-warning">Warning</button>
+        <button type="button" class="btn btn-outline-info">Info</button>
+        <button type="button" class="btn btn-outline-light">Light</button>
+        <button type="button" class="btn btn-outline-dark">Dark</button>
+    </div>
+
+
+    <div class="line"></div>
+
+
+    <div class="container">
+        <button type="button" class="btn btn-primary btn-lg">Large button</button>
+        <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="container">
+        <button type="button" class="btn btn-primary btn-sm">Small button</button>
+        <button type="button" class="btn btn-secondary btn-sm">Small button</button>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="container">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+    </div>
+
+
+    <div class="line"></div>
+
+    <div class="container">
+
+        <a href="#" class="btn btn-danger btn-lg switch-btn active" role="button" aria-pressed="true">Off</a>
+    </div>
+
+    <div class="line"></div>
+
+
+    <div class="container">
+        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
+        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>
+    </div>
+
+
+    <div class="line"></div>
+
+    <div class="container">
+        <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+        <button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="container">
+        <a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Primary
+            link</a>
+        <a href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="container">
+        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+            Single toggle
+        </button>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="container">
+
+        <div class="btn-group-toggle" data-toggle="button">
+            <label class="btn-checkbox btn btn-secondary "><input type="checkbox" autocomplete="on">Check?</label>
+        </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="container">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label for="" class="btn btn-primary active">
+                <input type="radio" name="sex" autocomplete="off" checked>男
+            </label>
+            <label for="" class="btn btn-primary">
+                <input type="radio" name="sex" autocomplete="off">女
+            </label>
+        </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="container">
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label for="" class="btn btn-primary active">
+                <input type="checkbox" name="options" autocomplete="off" checked>
+                音樂 </label>
+            <label for="" class="btn btn-primary">
+                <input type="checkbox" name="options" autocomplete="off">
+                體育 </label>
+            <label for="" class="btn btn-primary">
+                <input type="checkbox" name="options" autocomplete="off">
+                美術 </label>
+            <label for="" class="btn btn-primary">
+                <input type="checkbox" name="options" autocomplete="off">
+                電腦 </label>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        $('a').click(function (event) {
+
+            event.preventDefault(); // cancel the event
+        });
+
+        $('.switch-btn').on('click', function () {
+            if ($(this).attr('aria-pressed') === 'true') {
+                $(this).attr('aria-pressed', 'false');
+                $(this).text('On')
+                $(this).removeClass('btn-danger')
+                $(this).addClass('btn-primary')
+            }
+            else {
+                $(this).attr('aria-pressed', 'true');
+                $(this).text('Off')
+                $(this).removeClass('btn-primary')
+                $(this).addClass('btn-danger')
+            }
+
+            $(this).toggleClass('active')
+
+            // $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
+
+        });
+
+        // $('.btn-group-toggle').on('click', function () {
+        //     $(this).button('toggle');
+
+        //     if ($('.btn-checkbox').text() === 'Check?') {
+        //         $('.btn-checkbox').text('Checked')
+        //     }
+        //     else {
+        //         $('.btn-checkbox').text('Check?')
+        //     }
+        // });
+
+        // $('button').on('click', function () {
+        //     $(this).button('toggle');
+        // });
+
+
+    </script>
+</body>
+
+</html>

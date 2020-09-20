@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hw2.css">
+    <title>HWFORM </title>
+</head>
+
+<body>
+
+    <form action="" name="checkform" id="form1">
+        <fieldset class="fieldsetborder">
+            <legend>Form Check</legend>
+            <div class="margin20">
+                <div class="floatdiv">
+                    <label for="">姓名:</label>
+                    <input type="text" name="account" id="name1" onblur="checknamevalue()">
+                </div>
+                <div id="resetdiv">
+                    <span id="checkvalue"></span>
+                </div>
+                <br class="clearfloat">
+                <span class="spantext">(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</span>
+
+            </div>
+            <hr>
+            <div class="margin20">
+                <div class="floatdiv">
+                    <label for="">密碼:</label>
+                    <input type="password" name="pwd" id="pwd" onblur="checkpwdvalue()" value="">
+                </div>
+                <div id="resetdiv2">
+                    <span id="checkpwdvalue"></span>
+                </div> 
+                
+                <br class="clearfloat">
+                <span class="spantext">
+                    (1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*])
+                </span>
+            </div>
+            <hr>
+            <div class="margin20">
+                <div class="floatdiv">
+                    <label for="">日期:</label>
+                    <input type="text" name="date" id="date" onblur="checkdate()">
+                </div>
+                <div id="resetdiv3">
+                    <span id="checkdatevalue"></span>
+                </div> 
+                
+                <br class="clearfloat">
+                <span class="spantext">格式:西元年/月/日 yyyy/mm/dd</span>
+            </div>
+            <hr>
+            <div class="margin20" style="text-align: center;">
+                <input type="submit" onclick="checkall()" value="送出">
+                <input type="reset" id="reset" onclick="resetall()" onclick="form1.reset()" value="清除">
+            </div>
+
+        </fieldset>
+    </form>
+
+    <script src="hw2.js">
+
+    </script>
+</body>
+
+</html>
