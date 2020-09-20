@@ -53,31 +53,138 @@
                 console.log(result);
             });
 
-        }*/
+        }
+        */
 
 
         //=== Promise ===
+        //resolve => than
+        //reject => catch
 
-        function delayedadd(n1, n2, delayTime, callback) {
+        /*
+        function delayedadd(n1, n2, delayTime) {
             //建立Promise物件： new Promise(執行函式)
-            window.setTimeout(function() {
 
-                //延遲時間後計算,呼叫Callback fn  
-                callback(n1 + n2);
+            return new Promise(function(resolve, reject) {
 
-            }, delayTime);
+                window.setTimeout(function() {
 
-            console.log(1)
+                    resolve(n1 + n2);
+                    //工作完成後,呼叫resolve含式, 並且把結果參數傳遞進去
+
+                }, delayTime);
+
+            });
 
         }
 
         function test() {
 
-            delayedadd(3, 4, 2000, function(result) {
+            let promise = delayedadd(3, 4, 2000);
 
+            promise.then(function(result) {
                 console.log(result);
+            }).catch(function() {
+                console.log("Error", error)
             });
 
+        }
+        */
+
+
+        //=== promise2 ===
+        /*
+        function delayedadd(n1, n2, delayTime) {
+            //建立Promise物件： new Promise(執行函式)
+
+            return new Promise(function(resolve, reject) {
+
+                window.setTimeout(function() {
+
+                    resolve(n1 + n2);
+                    //工作完成後,呼叫resolve含式, 並且把結果參數傳遞進去
+
+                }, delayTime);
+
+            });
+
+        }
+
+        function test() {
+
+            let promise1 = delayedadd(3, 4, 2000);
+            let promise2 = delayedadd(2, 3, 3000);
+            //多個promise都完成後才繼續工作
+
+            Promise.all([promise1, promise2]).then(function(results) {
+
+                let answer = results.reduce(function(total, value) {
+                    return total * value;
+                });
+
+                console.log(answer);
+            });
+
+
+        }
+        */
+
+
+
+        //=== Async/Await ===
+        /*
+        function delayedadd(n1, n2, delayTime) {
+            //建立Promise物件： new Promise(執行函式)
+
+            return new Promise(function(resolve, reject) {
+
+                window.setTimeout(function() {
+
+                    resolve(n1 + n2);
+                    //工作完成後,呼叫resolve含式, 並且把結果參數傳遞進去
+
+                }, delayTime);
+
+            });
+
+        }
+
+        async function test() {
+
+            let result = await delayedadd(3, 4, 2000);
+
+            console.log(result);
+        }
+        */
+
+
+        //=== Async/Await 2 ===
+
+        function delayedadd(n1, n2, delayTime) {
+            //建立Promise物件： new Promise(執行函式)
+
+            return new Promise(function(resolve, reject) {
+
+                window.setTimeout(function() {
+
+                    resolve(n1 + n2);
+                    //工作完成後,呼叫resolve含式, 並且把結果參數傳遞進去
+
+                }, delayTime);
+
+            });
+
+        }
+
+        async function test() {
+
+            let result1 = await delayedadd(3, 4, 2000);
+
+            let result2 = await delayedadd(2, 3, 3000);
+
+            let answer = result1 * result2;
+
+            console.log(answer);
         }
     </script>
 </head>
