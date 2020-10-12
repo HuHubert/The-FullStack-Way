@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var request = require("request");
-request('http://api.komavideo.com/news/list', function (error, response, body) {
+request('http://api.komavideo.com/news/list', function(error, response, body) {
     if (error)
         console.error(error);
     else {
@@ -14,4 +14,6 @@ request('http://api.komavideo.com/news/list', function (error, response, body) {
     }
 });
 //尋找tsd文件 https://www.typescriptlang.org/dt/search?search=
-//安裝tsd文件
+//安裝tsd文件 npm...
+//編輯TSC ... .ts
+//運行js

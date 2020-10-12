@@ -13,6 +13,5 @@ console.log(data)
 console.log(data[4])
 
 //越界賦值
-
 data[10] = "GO"
 console.log(data)
