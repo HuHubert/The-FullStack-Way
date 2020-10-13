@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+</head>
+
+<body>
+    <h3>氣泡排序</h3>
+    <button onclick="test()">Test</button>
+
+
+</body>
+
+
+<script>
+    function test() {} {
+
+        let data = [5, -1, 10, 3];
+        bubbleSort(data);
+
+        console.log(data);
+
+
+    }
+
+    function bubbleSort(arr) {
+
+        for (let i = arr.length - 1; i >= 1; i--) {
+
+            for (let j = 0; j < i; j++) {
+
+                if (arr[j] > arr[j + 1]) {
+
+                    let temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+
+
+            }
+
+
+        }
+
+
+
+
+    }
+</script>
+
+</html>
