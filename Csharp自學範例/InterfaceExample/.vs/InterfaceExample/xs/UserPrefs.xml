@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{19FED92B-59CD-4C6F-8AFB-8BAC0CA80220}|Default">
+  <MonoDevelop.Ide.ItemProperties.InterfaceExample PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="InterfaceExample" expanded="True">
+            <Node name="InterfaceExample" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="InterfaceExample" expanded="True">
+            <Node name="InterfaceExample" expanded="True">
+              <Node name="InterfaceExample" expanded="True">
+                <Node name="InterfaceExample.Car" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

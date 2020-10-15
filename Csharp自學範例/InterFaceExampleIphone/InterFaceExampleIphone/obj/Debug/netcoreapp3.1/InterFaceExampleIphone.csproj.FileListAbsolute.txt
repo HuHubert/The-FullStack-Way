@@ -1,0 +1,12 @@
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/bin/Debug/netcoreapp3.1/InterFaceExampleIphone.deps.json
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/bin/Debug/netcoreapp3.1/InterFaceExampleIphone.runtimeconfig.json
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/bin/Debug/netcoreapp3.1/InterFaceExampleIphone.runtimeconfig.dev.json
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/bin/Debug/netcoreapp3.1/InterFaceExampleIphone.dll
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/bin/Debug/netcoreapp3.1/InterFaceExampleIphone.pdb
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/obj/Debug/netcoreapp3.1/InterFaceExampleIphone.csprojAssemblyReference.cache
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/obj/Debug/netcoreapp3.1/InterFaceExampleIphone.AssemblyInfoInputs.cache
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/obj/Debug/netcoreapp3.1/InterFaceExampleIphone.AssemblyInfo.cs
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/obj/Debug/netcoreapp3.1/InterFaceExampleIphone.csproj.CoreCompileInputs.cache
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/obj/Debug/netcoreapp3.1/InterFaceExampleIphone.dll
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/obj/Debug/netcoreapp3.1/InterFaceExampleIphone.pdb
+/Users/hubert/Projects/InterFaceExampleIphone/InterFaceExampleIphone/obj/Debug/netcoreapp3.1/InterFaceExampleIphone.genruntimeconfig.cache

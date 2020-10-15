@@ -1,0 +1,12 @@
+/Users/hubert/Projects/overWrite/overWrite/bin/Debug/netcoreapp3.1/overWrite.deps.json
+/Users/hubert/Projects/overWrite/overWrite/bin/Debug/netcoreapp3.1/overWrite.runtimeconfig.json
+/Users/hubert/Projects/overWrite/overWrite/bin/Debug/netcoreapp3.1/overWrite.runtimeconfig.dev.json
+/Users/hubert/Projects/overWrite/overWrite/bin/Debug/netcoreapp3.1/overWrite.dll
+/Users/hubert/Projects/overWrite/overWrite/bin/Debug/netcoreapp3.1/overWrite.pdb
+/Users/hubert/Projects/overWrite/overWrite/obj/Debug/netcoreapp3.1/overWrite.csprojAssemblyReference.cache
+/Users/hubert/Projects/overWrite/overWrite/obj/Debug/netcoreapp3.1/overWrite.AssemblyInfoInputs.cache
+/Users/hubert/Projects/overWrite/overWrite/obj/Debug/netcoreapp3.1/overWrite.AssemblyInfo.cs
+/Users/hubert/Projects/overWrite/overWrite/obj/Debug/netcoreapp3.1/overWrite.csproj.CoreCompileInputs.cache
+/Users/hubert/Projects/overWrite/overWrite/obj/Debug/netcoreapp3.1/overWrite.dll
+/Users/hubert/Projects/overWrite/overWrite/obj/Debug/netcoreapp3.1/overWrite.pdb
+/Users/hubert/Projects/overWrite/overWrite/obj/Debug/netcoreapp3.1/overWrite.genruntimeconfig.cache
