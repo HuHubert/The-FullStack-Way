@@ -1,8 +1,8 @@
 
 export interface ISoftwareListItem {
- ProjectId: string;
- DisplayName : string;
- Description : string;
+ Title: string;
+ ulxe : string;
+ bzkg: string;
  Visibility : string;
  ProjectTemplate : string;
  Owner : string;  
