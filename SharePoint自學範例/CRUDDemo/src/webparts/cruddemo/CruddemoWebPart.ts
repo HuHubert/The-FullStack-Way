@@ -24,10 +24,10 @@ export default class CruddemoWebPart extends BaseClientSideWebPart <ICruddemoWeb
     <div>
     <table border='5' bgcolor='#60B1E6' width="80%">
 
-    <tr>
-    <td>ProjectId</td>
-    <td><input type='text' id='ProjectId' />
-    </tr>
+      <tr>
+      <td>ProjectId</td>
+      <td><input type='text' id='ProjectId' />
+      </tr>
 
      
       <tr>
@@ -148,13 +148,13 @@ export default class CruddemoWebPart extends BaseClientSideWebPart <ICruddemoWeb
     
     this._getListItems().then(listItems => {
       let html: string = '<table border=1 width=100% style="border-collapse: collapse;">';
-      html += '<th>PlannerId</th> <th>DisplayName</th> <th>Description</th> <th>Visibility</th> <th>ProjectTemplate</th> <th>Owner</th>';
+      html += '<th>ProjectId</th> <th>DisplayName</th> <th>Description</th> <th>Visibility</th> <th>ProjectTemplate</th> <th>Owner</th>';
 
     listItems.forEach(listItem => {
       html += `<tr>            
-      <td>${listItem.PlannerId}</td>
-      <td>${listItem.DisplayName}</td>
-      <td>${listItem.Description}</td>
+      <td>${listItem.Title}</td>
+      <td>${listItem.ulxe}</td>
+      <td>${listItem.bzkg}</td>
       <td>${listItem.Visibility}</td>
       <td>${listItem.ProjectTemplate}</td>
       <td>${listItem.Owner}</td>
@@ -269,9 +269,9 @@ export default class CruddemoWebPart extends BaseClientSideWebPart <ICruddemoWeb
     let id: string= document.getElementById("txtID")["value"];
     this._getListItemByID(id).then(listItem => {
 
-    document.getElementById("ProjectId")["value"] = listItem.ProjectId;
-    document.getElementById("DisplayName")["value"] = listItem.DisplayName;
-    document.getElementById("Description")["value"] = listItem.Description;
+    document.getElementById("Title")["value"] = listItem.Title;
+    document.getElementById("DisplayName")["value"] = listItem.ulxe;
+    document.getElementById("Description")["value"] = listItem.bzkg;
     document.getElementById("Visibility")["value"] = listItem.Visibility;
     document.getElementById("ProjectTemplate ")["value"] = listItem.ProjectTemplate;
     document.getElementById("Owner")["value"] = listItem.Owner;
