@@ -91,7 +91,7 @@ export default class ReadSpListItemsWebPart extends BaseClientSideWebPart <IRead
 
    {
 
-    return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + "/_api/web/lists/GetByTitle('FETC-PMIS')/Items",SPHttpClient.configurations.v1)
+    return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + "/_api/web/lists/GetByTitle('FETC-PMIS-Demo')/Items",SPHttpClient.configurations.v1)
 
         .then((response: SPHttpClientResponse) => 
 
