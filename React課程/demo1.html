@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="like">喜歡</button>
+
+
+
+    <script>
+        var btnlike = document.getElementById("like");
+
+        btnlike.addEventListener("click", function() {
+
+            if (btnlike.innerHTML == "已點擊") {
+
+                btnlike.innerHTML = "喜歡"
+                btnlike.style.color = "black"
+
+            } else {
+
+                btnlike.innerHTML = "已點擊"
+                btnlike.style.color = "red"
+
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>
