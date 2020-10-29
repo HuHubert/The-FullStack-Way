@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+
+
+  <script>
+    var add = function(a, b){
+      return a+b;
+    }
+
+    //箭頭函數
+    var add2 = (a, b)=>{
+      return a+b;
+    }
+
+    var p = function (a){
+      return a*a;
+    }
+
+    var p = a =>{
+      return a*a;
+    }
+
+    var p = a => a*a;
+ 
+    var p = a => alert("1")
+
+    var obj = {
+      name: "1",
+      f:function(){
+
+        // this.f.bind(this) //obj
+        var me = this
+
+        window.setTimeout(function(){
+          console.log(me.name) //window this.name => window.name
+        },100)
+      },
+
+      fn:function(){
+
+        //箭頭函數仔哪個對象中調用,this就屬於那個對象
+        setTimeout(()=>{
+
+          console.log(this,"箭頭函數的this")
+        },100
+        )
+      }
+    }
+    
+
+
+
+  </script>
+  
+</body>
+</html>

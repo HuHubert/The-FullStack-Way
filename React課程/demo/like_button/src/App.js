@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Button,{Nav} from './Button'
-
+import Input from './input'
 
 
 
@@ -34,16 +34,20 @@ import Button,{Nav} from './Button'
    constructor (){
      super()
 
-     this.state = {
-       like : false
-     }
+    //  this.state = {
+    //    like : false
+    //  }
+
+    //綁定this作用域
+    // this.handleClick.bind(this)
 
    }
 
    handleClick(){
-     this.setState({
-       like : !this.state.like
-     })
+    //  this.setState({
+    //    like : !this.state.like
+    //  })
+    console.log("你在調用handleClick事件")
    }
 
 
@@ -54,8 +58,9 @@ import Button,{Nav} from './Button'
       
       <div>
 
-      <Nav/>
+      {/* <Nav/>
 
+      <Button></Button>
       <Button></Button>
       <Button></Button>
       <Button></Button>
@@ -69,7 +74,19 @@ import Button,{Nav} from './Button'
       }
 
 
-      </button>
+      </button> */}
+
+      {/* <p onClick={function() {console.log(this)}}>點擊看this</p> */}
+
+
+
+      {/* //綁定this作用域
+      <p onClick={this.handleClick}>點擊看this</p> */}
+
+      {/* <p onClick={()=>this.handleClick()}>點擊看this</p> */}
+
+
+      <Input></Input>
 
       </div>
 
