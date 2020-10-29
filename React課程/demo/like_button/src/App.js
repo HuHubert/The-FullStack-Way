@@ -54,6 +54,7 @@ import Input from './input'
   render() {
 
     console.log("render函數觸發了")
+    console.log("App組件更新")
     return (
       
       <div>
@@ -86,7 +87,19 @@ import Input from './input'
       {/* <p onClick={()=>this.handleClick()}>點擊看this</p> */}
 
 
-      <Input></Input>
+      {/* <Input></Input>
+      <Button></Button>
+      <Nav></Nav>
+
+      <p onClick={()=>this.setState({})}>點擊更新App組件</p> */}
+
+      <hr/>
+      <Nav title={"標題"}>
+        <h3>這是一個傳遞的children</h3>
+        <h3>這是一個傳遞的children 2</h3>
+        <Button name="點擊一下你就上天"></Button>
+        <Button name="點擊一下百度一下"></Button>
+      </Nav>
 
       </div>
 

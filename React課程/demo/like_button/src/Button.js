@@ -7,14 +7,18 @@ export default class Button extends Component{
     super()
   }
   render(){
+    console.log("Button組件更新")
     return (
-      <button type="button">這是一個來自Button.js的Button組件</button>
+      <button type="button">{this.props.name}</button>
     )
   }
 }
-
-const Nav = function(){
-   return (<div>Nav</div>)
+//函數的組件
+const Nav = function(props) {
+   return (<div style={{color:"white",backgroundColor:'black'}}>Nav
+   {props.title}
+   {props.children}
+   </div>)
 }
 
 export {Nav}
