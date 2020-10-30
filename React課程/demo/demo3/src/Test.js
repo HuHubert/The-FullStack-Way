@@ -3,12 +3,26 @@ import React, { Component } from 'react';
 export default class Test extends Component {
 
   constructor(props) {
-    console.log('constructor')
     super(props)
+    console.log('constructor')
+    this.state = {
+      time : new Date()
+    }
+    
   }
+
+  tick() {
+    this.setState({ 
+      time : new Date()
+    })
+  }
+
+
+
   //加載
   componentWillMount(){
     console.log('組件將要加載 componentWillMount')
+    this.timeId=setInterval(()=>this.tick(),1000)
 
   }
   componentDidMount(){
@@ -40,13 +54,15 @@ export default class Test extends Component {
   //卸載
   componentWillUnmount(){
     console.log('組件將要卸載 componentWillUnmount')
+    clearInterval(this.timeId)
   }
 
   render(){
     console.log("render")
     return(
       <div style={{border: '1px solid black'}}>
-        <p>Test</p>  
+        <p>Test</p> 
+        <p>{this.state.time.getSeconds()}</p> 
         <button type="button" onClick={()=>this.setState({})}>setState更新</button>
         <button type="button" onClick={()=>this.forceUpdate()}>forceUpdate更新</button>
       </div>
