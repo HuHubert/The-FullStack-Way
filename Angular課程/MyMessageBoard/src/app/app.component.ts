@@ -8,7 +8,8 @@ import { Message } from './message';
 })
 export class AppComponent {
   title = 'MyMessageBoard';
-/**
+  
+  /**
    * 綁定畫面中的「名稱」欄位
    *
    * @memberof AppComponent
