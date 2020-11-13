@@ -12,4 +12,17 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  
+
+  /**
+ * 新增代辦事項
+ *
+ * @param {HTMLInputElement} inputRef - 輸入框的元素實體
+ * @memberof TodoListComponent
+ */
+addTodo(inputRef: HTMLInputElement): void {
+  console.log(inputRef.value);
+  inputRef.value = '';
+}
 }
