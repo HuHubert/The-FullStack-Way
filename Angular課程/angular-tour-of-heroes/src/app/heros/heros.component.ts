@@ -13,8 +13,13 @@ import {HeroService} from '../hero.service';
 export class HerosComponent implements OnInit {
 
   heroes : Hero[];
+  title = 'origin';
 
   // selectedHero: Hero;
+
+  changelink($event){
+    this.title = 'new';
+  }
 
 
 
