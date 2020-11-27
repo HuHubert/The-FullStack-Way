@@ -19,7 +19,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
+    // ProfileComponent,
     HomeComponent
   ],
   imports: [

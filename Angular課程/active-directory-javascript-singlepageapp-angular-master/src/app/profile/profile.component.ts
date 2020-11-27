@@ -3,7 +3,7 @@ import { MsalService } from '@azure/msal-angular';
 import { HttpClient } from '@angular/common/http';
 import { InteractionRequiredAuthError, AuthError } from 'msal';
 
-const GRAPH_ENDPOINT = 'https://graph.microsoft.com/v1.0/me/joinedTeams';
+const GRAPH_ENDPOINT = 'https://graph.microsoft.com/v1.0/me/';
 
 @Component({
   selector: 'app-profile',
